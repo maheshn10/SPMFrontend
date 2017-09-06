@@ -1,0 +1,99 @@
+.tiles-container {
+    height: 100%;
+    margin-top: 50px;
+    padding: 0 40px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+}
+.tile {
+    margin: 15px 35px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: top;
+}
+.tile-icon, .tile-icon-inner {
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+.tile-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 25%;
+    -webkit-box-shadow: 0 0 40px rgba(23,93,157,.5);
+    box-shadow: 0 0 40px rgba(23,93,157,.5);
+    background-color: #f4f7fa;
+    background-size: 70%;
+    background-position: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.tile-icon-my-team .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-my-team.svg);
+}
+  .tile-icon-personal-information .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-personal-information.svg);
+}
+  .tile-icon-job-info .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-job-info.svg);
+}
+  .tile-icon-compensation .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-compensation.svg);
+}
+  .tile-icon-benefits .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-benefits.svg);
+}
+  .tile-icon-time-off .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-time-off.svg);
+}
+  .tile-icon-org-charts .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-org-charts.svg);
+}
+  .tile-icon-workers-comparison .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-workers-comparison.svg);
+}
+  .tile-icon-development .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-development.svg);
+}
+  .tile-icon-expenses .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-expenses.svg);
+}
+  .tile-icon-documentation .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-documentation.svg);
+}
+  .tile-icon-audit .tile-icon-inner {
+    background-image: url(/assets/images/icons-tiles/t-audit.svg);
+}
+.tile-icon-inner {
+    background-position: 50%;
+}
+.tile-icon-inner {
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    top: 12.5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.tile-icon, .tile-icon-inner {
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+  .tile-title {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    max-width: 100px;
+    color: #175d9d;
+}
