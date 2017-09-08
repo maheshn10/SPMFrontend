@@ -13,7 +13,7 @@
     "build:int": "webpack --env int -p",
     "startdev": "webpack-dev-server --port 1234 --env development --hot",
     "test": "jest --config jest.json",
-    "postinstall": "webpack -p",
+    "postedinstall": "webpack -p",
     "start": "node server.js",
     "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test -- --watch"
