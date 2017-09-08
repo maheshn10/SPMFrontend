@@ -4,6 +4,7 @@
     display: flex;
 }
 .navbar {
+    padding: 0px;
     padding-right: 20px;
     height: 57px;
     -ms-flex-wrap: wrap;
@@ -18,8 +19,8 @@
     background-color: #f4f7fa;
 }
 .sidebar-logo-block {
-    width: 230px;
-    padding: 10px;
+    width: 250px;
+    padding: 9px;
     background-color: #175d9d;
 }
 .sidebar-logo, .sidebar-logo--small {
@@ -39,10 +40,39 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    //custom
+    position: absolute;
+    left: 250px;
+    min-height: 57px;
 }
 .box-search, .navbar-search {
     margin-left: 30px;
     border-bottom: 1px solid #dbe5f0;
+}
+.navbar-search-input {
+	height: 30px;
+	padding-left: 10px;
+	border: none;
+	background-color: transparent;
+	font-size: 16px;
+	color: #a2bed8
+}
+.navbar-search-input:active, .navbar-search-input:focus {
+	outline: none;
+	border-bottom-color: #175d9d;
+	color: #175d9d
+}
+.navbar-search-input::-webkit-input-placeholder {
+    color:#a2bed8
+}
+.navbar-search-input::-moz-placeholder {
+    color:#a2bed8
+}
+.navbar-search-input:-ms-input-placeholder {
+    color:#a2bed8
+}
+.navbar-search-input:-moz-placeholder {
+    color:#a2bed8
 }
 .navbar-search-submit {
     width: 30px;
