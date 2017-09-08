@@ -3,6 +3,7 @@
  * @author Mahesh
  */
 import React from 'react';
+import './PersonalInfo.scss';
 
 class PersonalInfo extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class PersonalInfo extends React.Component {
           <div className="col-xs-12 col-md-3">
             <div className="panel key">
               <div className="key-icon">
-                <img src="img/icons/key-money.svg" alt="" />
+                <img src="/assets/images/icons/key-money.svg" alt="" />
               </div>
               <div className="key-data">
                 <div className="key-title">Salary</div>
@@ -58,7 +59,7 @@ class PersonalInfo extends React.Component {
           <div className="col-xs-12 col-md-3">
             <div className="panel key">
               <div className="key-icon">
-                <img src="img/icons/key-goal.svg" alt="" />
+                <img src="/assets/images/icons/key-goal.svg" alt="" />
               </div>
               <div className="key-data">
                 <div className="key-title">Target Total</div>
@@ -104,7 +105,7 @@ class PersonalInfo extends React.Component {
           <div className="col-xs-12 col-md-3">
             <div className="panel key">
               <div className="key-icon">
-                <img src="img/icons/key-docs.svg" alt="" />
+                <img src="/assets/images/icons/key-docs.svg" alt="" />
               </div>
               <div className="key-data">
                 <div className="key-title">Planwork Time</div>
@@ -150,7 +151,7 @@ class PersonalInfo extends React.Component {
           <div className="col-xs-12 col-md-3">
             <div className="panel key">
               <div className="key-icon">
-                <img src="img/icons/key-docs.svg" alt="" />
+                <img src="/assets/images/icons/key-docs.svg" alt="" />
               </div>
               <div className="key-data">
                 <div className="key-title">Company Ratio</div>
@@ -243,7 +244,7 @@ class PersonalInfo extends React.Component {
                   <div className="person person--horizontal">
                     <div className="person-photo">
                       <img
-                        src="img/global/sample-avatar.jpg"
+                        src="/assets/images/global/sample-avatar.jpg"
                         alt="Samruddhi Vairat"
                         title="Samruddhi Vairat"
                       />
@@ -798,10 +799,8 @@ class PersonalInfo extends React.Component {
                             <tr>
                               <th>Country</th>
                               <th>National ID Card Type</th>
-                              <th>National ID
-                                                            </th>
-                              <th>Is Primary
-                                                            </th>
+                              <th>National ID</th>
+                              <th>Is Primary</th>
                             </tr>
                           </thead>
                           <tbody>

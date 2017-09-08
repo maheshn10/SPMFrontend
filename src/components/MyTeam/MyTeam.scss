@@ -120,9 +120,6 @@
 .box-tab.active {
     display: block;
 }
-.box-inner {
-    padding: 10px 0;
-}
 .worker-col {
     display: none;
 }
@@ -192,54 +189,6 @@
 }
 .box img {
     max-width: 100%;
-}
-.person--inline .person-data {
-    margin-left: 25px;
-}
-.person-data {
-    margin-left: 20px;
-}
-.person-name {
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #175d9d;
-    font-size: 19px;
-}
-.person-position {
-    font-size: 13px;
-    font-weight: 300;
-    color: #b3b3b3;
-}
-.person-pin {
-    color: #175d9d;
-    font-size: 13px;
-    font-weight: 300;
-}
-.toggler {
-    position: relative;
-}
-.toggler-bar {
-    padding: 12px 25px;
-    background-color: #f4f7fa;
-    border-top: 1px solid #bfd2e5;
-    border-bottom: 1px solid #bfd2e5;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    cursor: pointer;
-}
-.toggler-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: #175d9d;
-    margin-right: auto;
-}
-.toggler-content {
-    display: none;
-}
-.toggler-content-inner {
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 .table {
     width: 100%;

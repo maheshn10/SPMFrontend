@@ -3,6 +3,7 @@
  * @author Mahesh
  */
 import React from 'react';
+import './JobInfo.scss';
 
 class JobInfo extends React.Component {
   render() {
@@ -189,7 +190,7 @@ class JobInfo extends React.Component {
               <div className="box-content">
 
                 <div className="row-no-padding">
-                  <div className="col-xs-6">
+                  <div className="col-xs-6 col-lg-6">
 
                     <div className="box-tab active">
 
@@ -326,7 +327,7 @@ class JobInfo extends React.Component {
                     </div>
 
                   </div>
-                  <div className="col-xs-6">
+                  <div className="col-xs-6 col-lg-6">
 
                     <div className="box-tab active">
 
