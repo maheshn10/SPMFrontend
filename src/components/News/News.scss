@@ -28,9 +28,9 @@ svg:not(:root), symbol, image, marker, pattern, foreignObject {
 svg {
     transform-origin: 50% 50% 0px;
 }
-* {
-    transform-origin: 0px 0px 0px;
-}   
+// * {
+//     transform-origin: 0px 0px 0px;
+// }   
 .box-title {
     margin-top: 6px;
     margin-left: 7px;

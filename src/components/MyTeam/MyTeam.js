@@ -3,6 +3,7 @@
  * @author Mahesh
  */
 import React from 'react';
+import './MyTeam.scss';
 
 class MyTeam extends React.Component {
   render() {
