@@ -190,7 +190,7 @@ class JobInfo extends React.Component {
               <div className="box-content">
 
                 <div className="row-no-padding">
-                  <div className="col-xs-6 col-lg-6">
+                  <div className="col-xs-6 col-lg-6 no-padding">
 
                     <div className="box-tab active">
 
@@ -327,7 +327,7 @@ class JobInfo extends React.Component {
                     </div>
 
                   </div>
-                  <div className="col-xs-6 col-lg-6">
+                  <div className="col-xs-6 col-lg-6 no-padding">
 
                     <div className="box-tab active">
 
