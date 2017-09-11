@@ -393,7 +393,7 @@ class Compensation extends React.Component {
               <div className="box-content">
 
                 <div className="row-no-padding">
-                  <div className="col-xs-12">
+                  <div className="col-xs-12 col-lg-12 no-padding">
 
                     <div className="box-tab active">
 
@@ -489,7 +489,7 @@ class Compensation extends React.Component {
               <div className="box-content">
 
                 <div className="row-no-padding">
-                  <div className="col-xs-12">
+                  <div className="col-xs-12 col-lg-12 no-padding">
 
                     <div className="box-tab active">
 
