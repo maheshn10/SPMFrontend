@@ -3,6 +3,7 @@
  * @author Mahesh
  */
 import React from 'react';
+import './Organisation.scss';
 
 class Organisation extends React.Component {
   render() {

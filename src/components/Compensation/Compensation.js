@@ -3,6 +3,7 @@
  * @author Mahesh
  */
 import React from 'react';
+import './Compensation.scss';
 
 class Compensation extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class Compensation extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-money.svg" alt="" />
+                <img src="/assets/images/icons/key-money.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -48,7 +49,7 @@ class Compensation extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-goal.svg" alt="" />
+                <img src="/assets/images/icons/key-goal.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -82,7 +83,7 @@ class Compensation extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-docs.svg" alt="" />
+                <img src="/assets/images/icons/key-docs.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -116,7 +117,7 @@ class Compensation extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-docs.svg" alt="" />
+                <img src="/assets/images/icons/key-docs.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -187,7 +188,7 @@ class Compensation extends React.Component {
               <div className="box-content">
 
                 <div className="row-no-padding">
-                  <div className="col-xs-12">
+                  <div className="col-xs-12 col-lg-12 no-padding">
 
                     <div className="box-tab active">
 
@@ -282,7 +283,7 @@ class Compensation extends React.Component {
                           </div>
 
                           <div className="salary-block">
-                            <img src="img/sample.png" alt="" />
+                            <img src="/assets/sample.png" alt="" />
                           </div>
 
                         </div>

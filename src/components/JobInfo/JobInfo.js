@@ -15,7 +15,7 @@ class JobInfo extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-money.svg" alt="" />
+                <img src="/assets/images/icons/key-money.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -30,12 +30,48 @@ class JobInfo extends React.Component {
                 <div className="panel-edit-icon js-panel-edit" />
 
                 <ul className="panel panel-edit-list">
-                  <li className="panel-edit-item js-panel-item active" data-keytitle="Salary" data-keyvalue="10 000">Change to salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Base salary" data-keyvalue="2500">Change to base salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Hourly salary" data-keyvalue="25">Change to hourly salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP low" data-keyvalue="1220">Change to MRP low</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP" data-keyvalue="1900">Change to MRP</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP high" data-keyvalue="2250">Change to MRP high</li>
+                  <li
+                    className="panel-edit-item js-panel-item active"
+                    data-keytitle="Salary"
+                    data-keyvalue="10 000"
+                  >
+                    Change to salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Base salary"
+                    data-keyvalue="2500"
+                  >
+                    Change to base salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Hourly salary"
+                    data-keyvalue="25"
+                  >
+                    Change to hourly salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP low"
+                    data-keyvalue="1220"
+                  >
+                    Change to MRP low
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP"
+                    data-keyvalue="1900"
+                  >
+                    Change to MRP
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP high"
+                    data-keyvalue="2250"
+                  >
+                    Change to MRP high
+                  </li>
                 </ul>
 
               </div>
@@ -49,7 +85,7 @@ class JobInfo extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-goal.svg" alt="" />
+                <img src="/assets/images/icons/key-goal.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -64,12 +100,48 @@ class JobInfo extends React.Component {
                 <div className="panel-edit-icon js-panel-edit" />
 
                 <ul className="panel panel-edit-list">
-                  <li className="panel-edit-item js-panel-item active" data-keytitle="Salary" data-keyvalue="10 000">Change to salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Base salary" data-keyvalue="2500">Change to base salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Hourly salary" data-keyvalue="25">Change to hourly salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP low" data-keyvalue="1220">Change to MRP low</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP" data-keyvalue="1900">Change to MRP</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP high" data-keyvalue="2250">Change to MRP high</li>
+                  <li
+                    className="panel-edit-item js-panel-item active"
+                    data-keytitle="Salary"
+                    data-keyvalue="10 000"
+                  >
+                    Change to salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Base salary"
+                    data-keyvalue="2500"
+                  >
+                    Change to base salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Hourly salary"
+                    data-keyvalue="25"
+                  >
+                    Change to hourly salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP low"
+                    data-keyvalue="1220"
+                  >
+                    Change to MRP low
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP"
+                    data-keyvalue="1900"
+                  >
+                    Change to MRP
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP high"
+                    data-keyvalue="2250"
+                  >
+                    Change to MRP high
+                  </li>
                 </ul>
 
               </div>
@@ -83,7 +155,7 @@ class JobInfo extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-docs.svg" alt="" />
+                <img src="/assets/images/icons/key-docs.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -98,12 +170,48 @@ class JobInfo extends React.Component {
                 <div className="panel-edit-icon js-panel-edit" />
 
                 <ul className="panel panel-edit-list">
-                  <li className="panel-edit-item js-panel-item active" data-keytitle="Salary" data-keyvalue="10 000">Change to salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Base salary" data-keyvalue="2500">Change to base salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Hourly salary" data-keyvalue="25">Change to hourly salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP low" data-keyvalue="1220">Change to MRP low</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP" data-keyvalue="1900">Change to MRP</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP high" data-keyvalue="2250">Change to MRP high</li>
+                  <li
+                    className="panel-edit-item js-panel-item active"
+                    data-keytitle="Salary"
+                    data-keyvalue="10 000"
+                  >
+                    Change to salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Base salary"
+                    data-keyvalue="2500"
+                  >
+                    Change to base salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Hourly salary"
+                    data-keyvalue="25"
+                  >
+                    Change to hourly salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP low"
+                    data-keyvalue="1220"
+                  >
+                    Change to MRP low
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP"
+                    data-keyvalue="1900"
+                  >
+                    Change to MRP
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP high"
+                    data-keyvalue="2250"
+                  >
+                    Change to MRP high
+                  </li>
                 </ul>
 
               </div>
@@ -117,7 +225,7 @@ class JobInfo extends React.Component {
             <div className="panel key">
 
               <div className="key-icon">
-                <img src="img/icons/key-docs.svg" alt="" />
+                <img src="/assets/images/icons/key-docs.svg" alt="" />
               </div>
 
               <div className="key-data">
@@ -132,12 +240,48 @@ class JobInfo extends React.Component {
                 <div className="panel-edit-icon js-panel-edit" />
 
                 <ul className="panel panel-edit-list">
-                  <li className="panel-edit-item js-panel-item active" data-keytitle="Salary" data-keyvalue="10 000">Change to salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Base salary" data-keyvalue="2500">Change to base salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="Hourly salary" data-keyvalue="25">Change to hourly salary</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP low" data-keyvalue="1220">Change to MRP low</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP" data-keyvalue="1900">Change to MRP</li>
-                  <li className="panel-edit-item js-panel-item" data-keytitle="MRP high" data-keyvalue="2250">Change to MRP high</li>
+                  <li
+                    className="panel-edit-item js-panel-item active"
+                    data-keytitle="Salary"
+                    data-keyvalue="10 000"
+                  >
+                    Change to salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Base salary"
+                    data-keyvalue="2500"
+                  >
+                    Change to base salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="Hourly salary"
+                    data-keyvalue="25"
+                  >
+                    Change to hourly salary
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP low"
+                    data-keyvalue="1220"
+                  >
+                    Change to MRP low
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP"
+                    data-keyvalue="1900"
+                  >
+                    Change to MRP
+                  </li>
+                  <li
+                    className="panel-edit-item js-panel-item"
+                    data-keytitle="MRP high"
+                    data-keyvalue="2250"
+                  >
+                    Change to MRP high
+                  </li>
                 </ul>
 
               </div>
@@ -150,7 +294,7 @@ class JobInfo extends React.Component {
 
         <div className="row">
 
-          <div className="col-xs-12">
+          <div className="col-xs-12 col-lg-12">
 
             <div className="box">
 
@@ -179,7 +323,26 @@ class JobInfo extends React.Component {
                     </li>
                     <li>
                       <a title="Help">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><circle cx="25" cy="25" r="24" fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2" /><rect width="50" height="50" fill="none" /><path d="M23.53,30.41V28.94a4.75,4.75,0,0,1,1.08-3.23l2.4-3.3c1.25-1.72,1.68-2.55,1.68-3.77a3.22,3.22,0,0,0-3.48-3.34c-2,0-3.3,1.22-3.73,3.41a.32.32,0,0,1-.4.29l-2.26-.4a.32.32,0,0,1-.29-.4,6.42,6.42,0,0,1,6.74-5.7c3.87,0,6.49,2.55,6.49,6.1A7.47,7.47,0,0,1,30,23.27l-2.4,3.3a3.7,3.7,0,0,0-.93,2.69V30.4a.34.34,0,0,1-.36.36H23.89A.33.33,0,0,1,23.53,30.41Zm-.18,3.44a.34.34,0,0,1,.36-.36h2.73a.34.34,0,0,1,.36.36v3.08a.34.34,0,0,1-.36.36H23.71a.34.34,0,0,1-.36-.36Z" fill="#fff" /></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 50 50"
+                        >
+                          <circle
+                            cx="25"
+                            cy="25"
+                            r="24"
+                            fill="none"
+                            stroke="#fff"
+                            strokeLinecap="round"
+                            strokeMiterlimit="10"
+                            strokeWidth="2"
+                          />
+                          <rect width="50" height="50" fill="none" />
+                          <path
+                            d="M23.53,30.41V28.94a4.75,4.75,0,0,1,1.08-3.23l2.4-3.3c1.25-1.72,1.68-2.55,1.68-3.77a3.22,3.22,0,0,0-3.48-3.34c-2,0-3.3,1.22-3.73,3.41a.32.32,0,0,1-.4.29l-2.26-.4a.32.32,0,0,1-.29-.4,6.42,6.42,0,0,1,6.74-5.7c3.87,0,6.49,2.55,6.49,6.1A7.47,7.47,0,0,1,30,23.27l-2.4,3.3a3.7,3.7,0,0,0-.93,2.69V30.4a.34.34,0,0,1-.36.36H23.89A.33.33,0,0,1,23.53,30.41Zm-.18,3.44a.34.34,0,0,1,.36-.36h2.73a.34.34,0,0,1,.36.36v3.08a.34.34,0,0,1-.36.36H23.71a.34.34,0,0,1-.36-.36Z"
+                            fill="#fff"
+                          />
+                        </svg>
                       </a>
                     </li>
                   </ul>
@@ -209,7 +372,9 @@ class JobInfo extends React.Component {
                               <tbody>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Job Code</span>
+                                    <span className="table-label">
+                                      Job Code
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -219,7 +384,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Position</span>
+                                    <span className="table-label">
+                                      Position
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -237,7 +404,9 @@ class JobInfo extends React.Component {
                         <div className="toggler active">
 
                           <div className="toggler-bar js-toggler-bar">
-                            <h2 className="toggler-title">Organizational Information</h2>
+                            <h2 className="toggler-title">
+                              Organizational Information
+                            </h2>
                             <span className="box-filter-arrow" />
                           </div>
 
@@ -257,7 +426,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Business Unit</span>
+                                    <span className="table-label">
+                                      Business Unit
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -267,7 +438,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Division</span>
+                                    <span className="table-label">
+                                      Division
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -277,7 +450,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Department</span>
+                                    <span className="table-label">
+                                      Department
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -287,7 +462,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Location</span>
+                                    <span className="table-label">
+                                      Location
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -297,7 +474,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Timezone</span>
+                                    <span className="table-label">
+                                      Timezone
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -307,7 +486,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Cost Center</span>
+                                    <span className="table-label">
+                                      Cost Center
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -346,7 +527,9 @@ class JobInfo extends React.Component {
                               <tbody>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Employee Status</span>
+                                    <span className="table-label">
+                                      Employee Status
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -356,7 +539,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Supervisor</span>
+                                    <span className="table-label">
+                                      Supervisor
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -366,7 +551,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Job Classification</span>
+                                    <span className="table-label">
+                                      Job Classification
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -376,23 +563,29 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Job Title</span>
+                                    <span className="table-label">
+                                      Job Title
+                                    </span>
                                   </td>
                                   <td>
-                                                                            Text
-                                                                        </td>
+                                    Text
+                                  </td>
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Local Job Title</span>
+                                    <span className="table-label">
+                                      Local Job Title
+                                    </span>
                                   </td>
                                   <td>
-                                                                            Text
-                                                                        </td>
+                                    Text
+                                  </td>
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Pay Grade</span>
+                                    <span className="table-label">
+                                      Pay Grade
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -402,7 +595,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Regular / Temporary</span>
+                                    <span className="table-label">
+                                      Regular / Temporary
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -413,19 +608,21 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Standard Weekly Hours</span>
+                                    <span className="table-label">
+                                      Standard Weekly Hours
+                                    </span>
                                   </td>
                                   <td>
-                                                                            Text
-                                                                        </td>
+                                    Text
+                                  </td>
                                 </tr>
                                 <tr>
                                   <td className="table-align">
                                     <span className="table-label">FTE</span>
                                   </td>
                                   <td>
-                                                                            Text
-                                                                        </td>
+                                    Text
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
@@ -447,7 +644,9 @@ class JobInfo extends React.Component {
                               <tbody>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Holiday Calendar</span>
+                                    <span className="table-label">
+                                      Holiday Calendar
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -457,7 +656,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Work Schedule</span>
+                                    <span className="table-label">
+                                      Work Schedule
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -467,7 +668,9 @@ class JobInfo extends React.Component {
                                 </tr>
                                 <tr>
                                   <td className="table-align">
-                                    <span className="table-label">Time Profile</span>
+                                    <span className="table-label">
+                                      Time Profile
+                                    </span>
                                   </td>
                                   <td>
                                     <select className="custom-select">
@@ -487,7 +690,7 @@ class JobInfo extends React.Component {
                     </div>
 
                   </div>
-                  <div className="col-xs-12">
+                  <div className="col-xs-12 col-lg-12 no-padding">
 
                     <div className="box-tab active">
                       <div className="box-inner--top">
@@ -495,20 +698,24 @@ class JobInfo extends React.Component {
                         <div className="toggler active">
 
                           <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
-                            <h2 className="toggler-title">Country Specific - USA</h2>
+                            <h2 className="toggler-title">
+                              Country Specific - USA
+                            </h2>
                             <span className="box-filter-arrow" />
                           </div>
                           <div className="toggler-content">
 
                             <div className="row-no-padding">
 
-                              <div className="col-xs-6">
+                              <div className="col-xs-6 col-lg-6 no-padding">
 
                                 <table className="table table--stripes">
                                   <tbody>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Is Fulltime Employee</span>
+                                        <span className="table-label">
+                                          Is Fulltime Employee
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -519,13 +726,17 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Notes</span>
+                                        <span className="table-label">
+                                          Notes
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Employee Class</span>
+                                        <span className="table-label">
+                                          Employee Class
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -535,7 +746,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">FLSA Status</span>
+                                        <span className="table-label">
+                                          FLSA Status
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -545,7 +758,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Is Shift Employee</span>
+                                        <span className="table-label">
+                                          Is Shift Employee
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -556,7 +771,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Shift Code</span>
+                                        <span className="table-label">
+                                          Shift Code
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -566,19 +783,25 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Shift Ratew</span>
+                                        <span className="table-label">
+                                          Shift Ratew
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Shift Percent</span>
+                                        <span className="table-label">
+                                          Shift Percent
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Is Cross Border Worker</span>
+                                        <span className="table-label">
+                                          Is Cross Border Worker
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -589,7 +812,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">EEO Job Group</span>
+                                        <span className="table-label">
+                                          EEO Job Group
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -599,7 +824,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Contract Type</span>
+                                        <span className="table-label">
+                                          Contract Type
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -612,49 +839,63 @@ class JobInfo extends React.Component {
 
                               </div>
 
-                              <div className="col-xs-6">
+                              <div className="col-xs-6 col-lg-6 no-padding">
 
                                 <table className="table table--stripes table--side-left">
                                   <tbody>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Continued Sickness Pay Period</span>
+                                        <span className="table-label">
+                                          Continued Sickness Pay Period
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Continued Sickness Pay Measure</span>
+                                        <span className="table-label">
+                                          Continued Sickness Pay Measure
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Notice Period</span>
+                                        <span className="table-label">
+                                          Notice Period
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Initial Entry</span>
+                                        <span className="table-label">
+                                          Initial Entry
+                                        </span>
                                       </td>
                                       <td>Date</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Entry into Group</span>
+                                        <span className="table-label">
+                                          Entry into Group
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">Corporation</span>
+                                        <span className="table-label">
+                                          Corporation
+                                        </span>
                                       </td>
                                       <td>Text</td>
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">EEO Category 1</span>
+                                        <span className="table-label">
+                                          EEO Category 1
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -664,7 +905,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">EEO Category 2</span>
+                                        <span className="table-label">
+                                          EEO Category 2
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -674,7 +917,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">EEO Category 3</span>
+                                        <span className="table-label">
+                                          EEO Category 3
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -684,7 +929,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">EEO Category 4</span>
+                                        <span className="table-label">
+                                          EEO Category 4
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -694,7 +941,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">EEO Category 5</span>
+                                        <span className="table-label">
+                                          EEO Category 5
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -704,7 +953,9 @@ class JobInfo extends React.Component {
                                     </tr>
                                     <tr>
                                       <td className="table-align">
-                                        <span className="table-label">EEO Category 6</span>
+                                        <span className="table-label">
+                                          EEO Category 6
+                                        </span>
                                       </td>
                                       <td>
                                         <select className="custom-select">
@@ -738,27 +989,49 @@ class JobInfo extends React.Component {
                       <table className="table">
                         <tbody>
                           <tr>
-                            <td><span className="table-label">Company Manager:</span></td>
+                            <td>
+                              <span className="table-label">
+                                Company Manager:
+                              </span>
+                            </td>
                             <td>manager</td>
                           </tr>
                           <tr>
-                            <td><span className="table-label">Cmp Mgr Of Cmp Mgr:</span></td>
+                            <td>
+                              <span className="table-label">
+                                Cmp Mgr Of Cmp Mgr:
+                              </span>
+                            </td>
                             <td>comManager</td>
                           </tr>
                           <tr>
-                            <td><span className="table-label">Mgr Operational:</span></td>
+                            <td>
+                              <span className="table-label">
+                                Mgr Operational:
+                              </span>
+                            </td>
                             <td>manager</td>
                           </tr>
                           <tr>
-                            <td><span className="table-label">Op Mgr Of Op Mgr:</span></td>
+                            <td>
+                              <span className="table-label">
+                                Op Mgr Of Op Mgr:
+                              </span>
+                            </td>
                             <td>opManager</td>
                           </tr>
                           <tr>
-                            <td><span className="table-label">Mgr Functional:</span></td>
+                            <td>
+                              <span className="table-label">
+                                Mgr Functional:
+                              </span>
+                            </td>
                             <td>FunManager</td>
                           </tr>
                           <tr>
-                            <td><span className="table-label">Mgr Hr:</span></td>
+                            <td>
+                              <span className="table-label">Mgr Hr:</span>
+                            </td>
                             <td>hrManager</td>
                           </tr>
                         </tbody>
@@ -781,11 +1054,17 @@ class JobInfo extends React.Component {
                           <td>Samruddhi Vairat.</td>
                         </tr>
                         <tr>
-                          <td><span className="table-label">Contact Person Name:</span></td>
+                          <td>
+                            <span className="table-label">
+                              Contact Person Name:
+                            </span>
+                          </td>
                           <td>madhu</td>
                         </tr>
                         <tr>
-                          <td><span className="table-label">Person Address:</span></td>
+                          <td>
+                            <span className="table-label">Person Address:</span>
+                          </td>
                           <td>satara</td>
                         </tr>
                         <tr>
@@ -817,7 +1096,7 @@ class JobInfo extends React.Component {
 
         <div className="row">
 
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-lg-6">
 
             <div className="box">
 
@@ -825,7 +1104,10 @@ class JobInfo extends React.Component {
 
                 <li className="box-heading active">
                   <div className="box-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 31.89">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 43 31.89"
+                    >
                       <g id="Warstwa_2" data-name="Warstwa 2">
                         <g id="dashboard">
                           <path
@@ -851,7 +1133,26 @@ class JobInfo extends React.Component {
                     </li>
                     <li>
                       <a title="Help">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><circle cx="25" cy="25" r="24" fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2" /><rect width="50" height="50" fill="none" /><path d="M23.53,30.41V28.94a4.75,4.75,0,0,1,1.08-3.23l2.4-3.3c1.25-1.72,1.68-2.55,1.68-3.77a3.22,3.22,0,0,0-3.48-3.34c-2,0-3.3,1.22-3.73,3.41a.32.32,0,0,1-.4.29l-2.26-.4a.32.32,0,0,1-.29-.4,6.42,6.42,0,0,1,6.74-5.7c3.87,0,6.49,2.55,6.49,6.1A7.47,7.47,0,0,1,30,23.27l-2.4,3.3a3.7,3.7,0,0,0-.93,2.69V30.4a.34.34,0,0,1-.36.36H23.89A.33.33,0,0,1,23.53,30.41Zm-.18,3.44a.34.34,0,0,1,.36-.36h2.73a.34.34,0,0,1,.36.36v3.08a.34.34,0,0,1-.36.36H23.71a.34.34,0,0,1-.36-.36Z" fill="#fff" /></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 50 50"
+                        >
+                          <circle
+                            cx="25"
+                            cy="25"
+                            r="24"
+                            fill="none"
+                            stroke="#fff"
+                            strokeLinecap="round"
+                            strokeMiterlimit="10"
+                            strokeWidth="2"
+                          />
+                          <rect width="50" height="50" fill="none" />
+                          <path
+                            d="M23.53,30.41V28.94a4.75,4.75,0,0,1,1.08-3.23l2.4-3.3c1.25-1.72,1.68-2.55,1.68-3.77a3.22,3.22,0,0,0-3.48-3.34c-2,0-3.3,1.22-3.73,3.41a.32.32,0,0,1-.4.29l-2.26-.4a.32.32,0,0,1-.29-.4,6.42,6.42,0,0,1,6.74-5.7c3.87,0,6.49,2.55,6.49,6.1A7.47,7.47,0,0,1,30,23.27l-2.4,3.3a3.7,3.7,0,0,0-.93,2.69V30.4a.34.34,0,0,1-.36.36H23.89A.33.33,0,0,1,23.53,30.41Zm-.18,3.44a.34.34,0,0,1,.36-.36h2.73a.34.34,0,0,1,.36.36v3.08a.34.34,0,0,1-.36.36H23.71a.34.34,0,0,1-.36-.36Z"
+                            fill="#fff"
+                          />
+                        </svg>
                       </a>
                     </li>
                   </ul>
@@ -878,13 +1179,17 @@ class JobInfo extends React.Component {
                           <tbody>
                             <tr>
                               <td className="table-align">
-                                <span className="table-label">Relationship Type</span>
+                                <span className="table-label">
+                                  Relationship Type
+                                </span>
                               </td>
                               <td>
                                 <select className="custom-select">
                                   <option value="v-1">HR Manager</option>
                                   <option value="v-2">Matrix Manager</option>
-                                  <option value="v-3">Additional Manager</option>
+                                  <option value="v-3">
+                                    Additional Manager
+                                  </option>
                                   <option value="v-4">Second Manager</option>
                                 </select>
                               </td>
@@ -912,7 +1217,7 @@ class JobInfo extends React.Component {
 
           </div>
 
-          <div className="col-xs-6">
+          <div className="col-xs-6 col-lg-6">
 
             <div className="box">
 
@@ -920,7 +1225,10 @@ class JobInfo extends React.Component {
 
                 <li className="box-heading active">
                   <div className="box-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 41.86">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 40 41.86"
+                    >
                       <g id="Warstwa_2" data-name="Warstwa 2">
                         <g id="dashboard">
                           <path
@@ -943,12 +1251,31 @@ class JobInfo extends React.Component {
                             d="M32.24,24.91l-4.6,4.6a1.13,1.13,0,0,0,0,1.63,1.17,1.17,0,0,0,1.63,0l4.6-4.6a1.15,1.15,0,0,0-1.63-1.63Z"
                             fill="#f4f7fa"
                           />
-                          <circle cx="28.46" cy="23.41" r="1.15" fill="#f4f7fa" />
-                          <ellipse
-                            cx="27.62" cy="32.56" rx="1.23" ry="1.6" fill="#f4f7fa"
+                          <circle
+                            cx="28.46"
+                            cy="23.41"
+                            r="1.15"
+                            fill="#f4f7fa"
                           />
-                          <circle cx="35.38" cy="30.33" r="1.15" fill="#f4f7fa" />
-                          <circle cx="21.54" cy="30.33" r="1.15" fill="#f4f7fa" />
+                          <ellipse
+                            cx="27.62"
+                            cy="32.56"
+                            rx="1.23"
+                            ry="1.6"
+                            fill="#f4f7fa"
+                          />
+                          <circle
+                            cx="35.38"
+                            cy="30.33"
+                            r="1.15"
+                            fill="#f4f7fa"
+                          />
+                          <circle
+                            cx="21.54"
+                            cy="30.33"
+                            r="1.15"
+                            fill="#f4f7fa"
+                          />
                         </g>
                       </g>
                     </svg>
@@ -960,7 +1287,26 @@ class JobInfo extends React.Component {
                     </li>
                     <li>
                       <a title="Help">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><circle cx="25" cy="25" r="24" fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2" /><rect width="50" height="50" fill="none" /><path d="M23.53,30.41V28.94a4.75,4.75,0,0,1,1.08-3.23l2.4-3.3c1.25-1.72,1.68-2.55,1.68-3.77a3.22,3.22,0,0,0-3.48-3.34c-2,0-3.3,1.22-3.73,3.41a.32.32,0,0,1-.4.29l-2.26-.4a.32.32,0,0,1-.29-.4,6.42,6.42,0,0,1,6.74-5.7c3.87,0,6.49,2.55,6.49,6.1A7.47,7.47,0,0,1,30,23.27l-2.4,3.3a3.7,3.7,0,0,0-.93,2.69V30.4a.34.34,0,0,1-.36.36H23.89A.33.33,0,0,1,23.53,30.41Zm-.18,3.44a.34.34,0,0,1,.36-.36h2.73a.34.34,0,0,1,.36.36v3.08a.34.34,0,0,1-.36.36H23.71a.34.34,0,0,1-.36-.36Z" fill="#fff" /></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 50 50"
+                        >
+                          <circle
+                            cx="25"
+                            cy="25"
+                            r="24"
+                            fill="none"
+                            stroke="#fff"
+                            strokeLinecap="round"
+                            strokeMiterlimit="10"
+                            strokeWidth="2"
+                          />
+                          <rect width="50" height="50" fill="none" />
+                          <path
+                            d="M23.53,30.41V28.94a4.75,4.75,0,0,1,1.08-3.23l2.4-3.3c1.25-1.72,1.68-2.55,1.68-3.77a3.22,3.22,0,0,0-3.48-3.34c-2,0-3.3,1.22-3.73,3.41a.32.32,0,0,1-.4.29l-2.26-.4a.32.32,0,0,1-.29-.4,6.42,6.42,0,0,1,6.74-5.7c3.87,0,6.49,2.55,6.49,6.1A7.47,7.47,0,0,1,30,23.27l-2.4,3.3a3.7,3.7,0,0,0-.93,2.69V30.4a.34.34,0,0,1-.36.36H23.89A.33.33,0,0,1,23.53,30.41Zm-.18,3.44a.34.34,0,0,1,.36-.36h2.73a.34.34,0,0,1,.36.36v3.08a.34.34,0,0,1-.36.36H23.71a.34.34,0,0,1-.36-.36Z"
+                            fill="#fff"
+                          />
+                        </svg>
                       </a>
                     </li>
                   </ul>
@@ -993,31 +1339,41 @@ class JobInfo extends React.Component {
                             </tr>
                             <tr>
                               <td className="table-align">
-                                <span className="table-label">Original Start Date</span>
+                                <span className="table-label">
+                                  Original Start Date
+                                </span>
                               </td>
                               <td>Date</td>
                             </tr>
                             <tr>
                               <td className="table-align">
-                                <span className="table-label">Seniority Start Date</span>
+                                <span className="table-label">
+                                  Seniority Start Date
+                                </span>
                               </td>
                               <td>Date</td>
                             </tr>
                             <tr>
                               <td className="table-align">
-                                <span className="table-label">Service Date</span>
+                                <span className="table-label">
+                                  Service Date
+                                </span>
                               </td>
                               <td>Date</td>
                             </tr>
                             <tr>
                               <td className="table-align">
-                                <span className="table-label">Professional Service Date</span>
+                                <span className="table-label">
+                                  Professional Service Date
+                                </span>
                               </td>
                               <td>Date</td>
                             </tr>
                             <tr>
                               <td className="table-align">
-                                <span className="table-label">Rehire Date</span>
+                                <span className="table-label">
+                                  Rehire Date
+                                </span>
                               </td>
                               <td>Date</td>
                             </tr>

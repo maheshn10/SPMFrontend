@@ -47,10 +47,7 @@ body {
 ol, ul {
     list-style: none;
 }
-.box-heading.active {
-    background-color: #175d9d;
-    color: #fff;
-}
+
 .box-heading:last-of-type {
     border-right: none;
 }
@@ -69,4 +66,26 @@ ol, ul {
     display: -ms-flexbox;
     display: flex;
 }
+.help-links, .page-nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.help-links {
+	margin: 0 0 0 auto;
+	padding: 0;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.help-links a {
+	display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.help-links svg {
+	height: 23px;
+	width: 23px;
+}
+
 
