@@ -4,9 +4,19 @@
  */
 import React from 'react';
 import { Link } from 'react-router';
+// import { ButtonToolbar, DropdownButton, MenuItem } from 'react-bootstrap';
 import './NavBar.scss';
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleLanguageDropdown = this.toggleLanguageDropdown.bind(this);
+  }
+  toggleLanguageDropdown(elementID) {
+    const x = document.getElementById(elementID);
+    x.classList.toggle('active');
+  }
+
   render() {
     return (
       <div className="navbar">
@@ -23,10 +33,33 @@ class NavBar extends React.Component {
         <div className="navbar-toggle-search">
           <form action="#" className="navbar-search">
             <input type="submit" value="" className="navbar-search-submit" />
-            <input type="text" className="navbar-search-input" placeholder="Search" />
+            <input
+              type="text"
+              className="navbar-search-input"
+              placeholder="Search"
+            />
           </form>
         </div>
         <ul className="navbar-actions">
+          <li>
+            <a
+              className="navbar-action languageNav"
+              title="Language"
+              onClick={() => this.toggleLanguageDropdown('LanguageDropdown')}
+            >
+              <div className="navbar-icon navbar-icon-language">
+                <span className="badge badge--nav">En</span>
+              </div>
+              <ul className="take-action box-dropdown-content" id="LanguageDropdown">
+                <li>
+                  <a>English</a>
+                </li>
+                <li>
+                  <a>German</a>
+                </li>
+              </ul>
+            </a>
+          </li>
           <li>
             <a className="navbar-action" title="Show my calendar">
               <div className="navbar-icon navbar-icon-calendar">
@@ -57,12 +90,12 @@ class NavBar extends React.Component {
                 title="Samruddhi Vairat"
               />
               <span className="navbar-name">
-                                Samruddhi
-                                <br />
-                                Vairat
-                            </span>
-              <div className="navbar-dropdown js-box-dropdown">
-                <ul className="take-action box-dropdown-content js-box-dropdown-content">
+                Samruddhi
+                <br />
+                Vairat
+              </span>
+              <div className="navbar-dropdown js-box-dropdown" onClick={() => this.toggleLanguageDropdown('profileDropDown')}>
+                <ul className="take-action box-dropdown-content js-box-dropdown-content" id="profileDropDown">
                   <li>
                     <a>User Profile</a>
                   </li>
@@ -87,5 +120,4 @@ class NavBar extends React.Component {
     );
   }
 }
-
 export default NavBar;

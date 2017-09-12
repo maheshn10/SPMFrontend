@@ -180,60 +180,6 @@ body {
 .landing-tab-column .box {
 	margin-bottom: 30px;
 }
-.navbar-actions {
-	margin-left: auto;
-}
-.navbar-actions, .navbar-actions li {
-	height: 100%;
-}
-.navbar-actions li {
-	display: block;
-	float: left;
-}
-.navbar-actions .take-action li {
-	float: none;
-	display: block;
-}
-.navbar-action {
-	height: 100%;
-	padding: 0 15px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	border-left: 1px solid #cbdae9;
-	text-align: center;
-	text-decoration: none;
-	position: relative;
-}
-.navbar-action:hover .badge {
-	-webkit-box-shadow: 1px 1px 30px rgba(23,93,157,.5);
-	box-shadow: 1px 1px 30px rgba(23,93,157,.5);
-}
-.navbar-icon {
-	width: 25px;
-	height: 18px;
-	background-repeat: no-repeat;
-	background-position: 50%;
-}
-.navbar-icon-calendar {
-	background-image: url(/assets/images/icons/ico-calendar.svg);
-}
-.navbar-icon-mail {
-	background-image: url(/assets/images/icons/ico-mail.svg);
-}
-.navbar-icon-notification {
-	background-image: url(/assets/images/icons/ico-notification.svg);
-}
-.navbar-icon-settings {
-	background-image: url(/assets/images/icons/ico-settings.svg);
-}
 .badge {
 	display: block;
 	width: 20px;
