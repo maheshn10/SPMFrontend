@@ -6,6 +6,14 @@ import React from 'react';
 import './JobInfo.scss';
 
 class JobInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleElement = this.toggleElement.bind(this);
+  }
+  toggleElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.classList.toggle('active');
+  }
   render() {
     return (
       <div className="container">
@@ -25,7 +33,7 @@ class JobInfo extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="salary" onClick={() => this.toggleElement('salary')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -95,7 +103,7 @@ class JobInfo extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="targetTotal" onClick={() => this.toggleElement('targetTotal')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -165,7 +173,7 @@ class JobInfo extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="planworkTime" onClick={() => this.toggleElement('planworkTime')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -235,7 +243,7 @@ class JobInfo extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="companyRatio" onClick={() => this.toggleElement('companyRatio')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -359,9 +367,9 @@ class JobInfo extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="keyJobAttribute">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('keyJobAttribute')}>
                             <h2 className="toggler-title">Key Job Attribute</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -401,9 +409,9 @@ class JobInfo extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="organizationalInfo">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('organizationalInfo')}>
                             <h2 className="toggler-title">
                               Organizational Information
                             </h2>
@@ -514,9 +522,9 @@ class JobInfo extends React.Component {
 
                       <div className="box-inner box-inner--side box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="JobInfo">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('JobInfo')}>
                             <h2 className="toggler-title">Job Information</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -631,9 +639,9 @@ class JobInfo extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="TimeInfo">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('TimeInfo')}>
                             <h2 className="toggler-title">Time Information</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -695,9 +703,9 @@ class JobInfo extends React.Component {
                     <div className="box-tab active">
                       <div className="box-inner--top">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="countrySpecific">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('countrySpecific')}>
                             <h2 className="toggler-title">
                               Country Specific - USA
                             </h2>
@@ -1166,9 +1174,9 @@ class JobInfo extends React.Component {
 
                   <div className="box-inner box-inner--no-pad">
 
-                    <div className="toggler active">
+                    <div className="toggler active" id="globalFields">
 
-                      <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                      <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('globalFields')}>
                         <h2 className="toggler-title">Global fields</h2>
                         <span className="box-filter-arrow" />
                       </div>
@@ -1320,9 +1328,9 @@ class JobInfo extends React.Component {
 
                   <div className="box-inner box-inner--no-pad">
 
-                    <div className="toggler active">
+                    <div className="toggler active" id="globalFields2">
 
-                      <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                      <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('globalFields2')}>
                         <h2 className="toggler-title">Global fields</h2>
                         <span className="box-filter-arrow" />
                       </div>

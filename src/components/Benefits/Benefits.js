@@ -5,6 +5,15 @@
 import React from 'react';
 
 class Benefits extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleElement = this.toggleElement.bind(this);
+  }
+  toggleElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.classList.toggle('active');
+  }
+
   render() {
     return (
       <div className="container">
@@ -24,7 +33,7 @@ class Benefits extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="salary" onClick={() => this.toggleElement('salary')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -58,7 +67,7 @@ class Benefits extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="targetTotal" onClick={() => this.toggleElement('targetTotal')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -92,7 +101,7 @@ class Benefits extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="planworkTime" onClick={() => this.toggleElement('planworkTime')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -126,7 +135,7 @@ class Benefits extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="companyRatio" onClick={() => this.toggleElement('companyRatio')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -193,9 +202,9 @@ class Benefits extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="allowance">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('allowance')}>
                             <h2 className="toggler-title">Allowance</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -221,9 +230,9 @@ class Benefits extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="pensionSavingsRetirement">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('pensionSavingsRetirement')}>
                             <h2 className="toggler-title">Pensions / Savings / Retirement Plans</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -307,9 +316,9 @@ class Benefits extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="toDo">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('toDo')}>
                             <h2 className="toggler-title">To-Do</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -340,9 +349,9 @@ class Benefits extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="activeBenefitEnrollment">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('activeBenefitEnrollment')}>
                             <h2 className="toggler-title">Active Benefit Enrollments</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -382,9 +391,9 @@ class Benefits extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="activeProgramEnroll">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('activeProgramEnroll')}>
                             <h2 className="toggler-title">Active Program Enrollments</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -458,9 +467,9 @@ class Benefits extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="claims">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('claims')}>
                             <h2 className="toggler-title">In-process Claims</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -486,7 +495,7 @@ class Benefits extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="processedClaims">
 
                           <div className="toggler-dropdown">
                             <label htmlFor="benefits-processed-claims">Processed Claims of year</label>
@@ -496,7 +505,7 @@ class Benefits extends React.Component {
                             </select>
                           </div>
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('processedClaims')}>
                             <h2 className="toggler-title">Processed Claims</h2>
                             <span className="box-filter-arrow" />
                           </div>

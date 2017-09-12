@@ -263,12 +263,12 @@ class PersonalInfo extends React.Component {
                     </div>
                   </div>
                   <div className="box-inner box-inner--no-pad">
-                    <div className="toggler active" id="personalInfo" onClick={() => this.toggleElement('personalInfo')}>
-                      <div className="toggler-bar js-toggler-bar">
+                    <div className="toggler active" id="personalInfo" >
+                      <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('personalInfo')}>
                         <h2 className="toggler-title">Personal Information</h2>
                         <span className="box-filter-arrow" />
                       </div>
-                      <div className="toggler-content">
+                      <div className="toggler-content" id="personalInfo">
                         <table className="table table--stripes">
                           <tbody>
                             <tr>
@@ -421,8 +421,8 @@ class PersonalInfo extends React.Component {
                         </table>
                       </div>
                     </div>
-                    <div className="toggler active" id="countrySpecificFields" onClick={() => this.toggleElement('countrySpecificFields')}>
-                      <div className="toggler-bar js-toggler-bar">
+                    <div className="toggler active" id="countrySpecificFields">
+                      <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('countrySpecificFields')}>
                         <h2 className="toggler-title">Country Specific Fields</h2>
                         <span className="box-filter-arrow" />
                       </div>
@@ -566,8 +566,8 @@ class PersonalInfo extends React.Component {
                   <div className="box-content">
                     <div className="box-tab active">
                       <div className="box-inner box-inner--no-pad">
-                        <div className="toggler active" id="biographicalInfo" onClick={() => this.toggleElement('biographicalInfo')}>
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                        <div className="toggler active" id="biographicalInfo">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('biographicalInfo')}>
                             <h2 className="toggler-title">Biographical Information</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -981,8 +981,8 @@ class PersonalInfo extends React.Component {
                   <div className="box-content">
                     <div className="box-tab active">
                       <div className="box-inner box-inner--no-pad">
-                        <div className="toggler active" id="homeAddress" onClick={() => this.toggleElement('homeAddress')}>
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                        <div className="toggler active" id="homeAddress">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('homeAddress')}>
                             <h2 className="toggler-title">Home Address</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -1049,8 +1049,8 @@ class PersonalInfo extends React.Component {
                             </table>
                           </div>
                         </div>
-                        <div className="toggler active" id="mailingAddress" onClick={() => this.toggleElement('mailingAddress')}>
-                          <div className="toggler-bar js-toggler-bar">
+                        <div className="toggler active" id="mailingAddress">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('mailingAddress')}>
                             <h2 className="toggler-title">Mailing Address</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -1434,8 +1434,8 @@ class PersonalInfo extends React.Component {
                   <div className="box-content">
                     <div className="box-tab active">
                       <div className="box-inner box-inner--no-pad">
-                        <div className="toggler active" id="emailInfo" onClick={() => this.toggleElement('emailInfo')}>
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                        <div className="toggler active" id="emailInfo">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('emailInfo')}>
                             <h2 className="toggler-title">Email information</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -1460,8 +1460,8 @@ class PersonalInfo extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <div className="toggler active" id="phoneInfo" onClick={() => this.toggleElement('phoneInfo')}>
-                          <div className="toggler-bar js-toggler-bar">
+                        <div className="toggler active" id="phoneInfo">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('phoneInfo')}>
                             <h2 className="toggler-title">Phone information</h2>
                             <span className="box-filter-arrow" />
                           </div>
