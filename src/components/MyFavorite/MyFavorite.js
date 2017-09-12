@@ -3,6 +3,8 @@
  * @author Mahesh
  */
 import React from 'react';
+import { connect } from 'react-redux';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 import './MyFavorite.scss';
 
 class MyFavorite extends React.Component {
@@ -14,7 +16,7 @@ class MyFavorite extends React.Component {
             <div className="box-icon box-icon--first">
               <svg className="landing-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.06 43.22"><polygon points="22.53 1.5 29.34 14.31 43.56 16.86 33.54 27.33 35.53 41.72 22.53 35.38 9.53 41.72 11.52 27.33 1.5 16.86 15.72 14.31 22.53 1.5 22.53 1.5" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" /></svg>
             </div>
-            <h2 className="box-title">My Favorites</h2>
+            <h2 className="box-title">{this.props.translate('MyFavorites')}</h2>
             <div className="box-icons">
               <div className="box-icon">
                 <a>
@@ -58,4 +60,9 @@ class MyFavorite extends React.Component {
   }
 }
 
-export default MyFavorite;
+function mapStateToProps(state) {
+  return { translate: getTranslate(state.locale),
+    currentLanguage: getActiveLanguage(state.locale).code };
+}
+
+export default connect(mapStateToProps)(MyFavorite);

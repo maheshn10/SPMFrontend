@@ -3,7 +3,9 @@
  * @author Mahesh
  */
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import { setActiveLanguage, getTranslate, getActiveLanguage } from 'react-localize-redux';
 // import { ButtonToolbar, DropdownButton, MenuItem } from 'react-bootstrap';
 import './NavBar.scss';
 
@@ -11,11 +13,19 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.toggleLanguageDropdown = this.toggleLanguageDropdown.bind(this);
+    this.setLanguage = this.setLanguage.bind(this);
   }
+
+  setLanguage(lang) {
+    console.log(lang);
+    this.props.dispatch(setActiveLanguage(lang));
+  }
+
   toggleLanguageDropdown(elementID) {
     const x = document.getElementById(elementID);
     x.classList.toggle('active');
   }
+
 
   render() {
     return (
@@ -36,7 +46,7 @@ class NavBar extends React.Component {
             <input
               type="text"
               className="navbar-search-input"
-              placeholder="Search"
+              placeholder={this.props.translate('Search')}
             />
           </form>
         </div>
@@ -48,14 +58,17 @@ class NavBar extends React.Component {
               onClick={() => this.toggleLanguageDropdown('LanguageDropdown')}
             >
               <div className="navbar-icon navbar-icon-language">
-                <span className="badge badge--nav">En</span>
+                <span className="badge badge--nav">{this.props.currentLanguage}</span>
               </div>
               <ul className="take-action box-dropdown-content" id="LanguageDropdown">
-                <li>
-                  <a>English</a>
+                <li onClick={() => this.setLanguage('en')}>
+                  <a>English (en)</a>
                 </li>
-                <li>
-                  <a>German</a>
+                <li onClick={() => this.setLanguage('de')}>
+                  <a>Deutsche (de)</a>
+                </li>
+                <li onClick={() => this.setLanguage('fr')}>
+                  <a>français (fr)</a>
                 </li>
               </ul>
             </a>
@@ -97,19 +110,19 @@ class NavBar extends React.Component {
               <div className="navbar-dropdown js-box-dropdown" onClick={() => this.toggleLanguageDropdown('profileDropDown')}>
                 <ul className="take-action box-dropdown-content js-box-dropdown-content" id="profileDropDown">
                   <li>
-                    <a>User Profile</a>
+                    <a>{this.props.translate('UserProfile')}</a>
                   </li>
                   <li>
-                    <a>Admin Options</a>
+                    <a>{this.props.translate('AdminOptions')}</a>
                   </li>
                   <li>
-                    <a>Proxy Options</a>
+                    <a>{this.props.translate('ProxyOptions')}</a>
                   </li>
                   <li>
-                    <a>Change Language</a>
+                    <a>{this.props.translate('ChangeLanguage')}</a>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <a>{this.props.translate('Logout')}</a>
                   </li>
                 </ul>
               </div>
@@ -120,4 +133,10 @@ class NavBar extends React.Component {
     );
   }
 }
-export default NavBar;
+function mapStateToProps(state) {
+  return { locale: state.locale,
+    translate: getTranslate(state.locale),
+    currentLanguage: getActiveLanguage(state.locale).code };
+}
+
+export default connect(mapStateToProps)(NavBar);

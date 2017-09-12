@@ -1,0 +1,23 @@
+{
+  "Home": "Zuhause",
+  "MyTeam": "Mein Team",
+  "PersonalInformation": "Persönliche Angaben",
+  "JobInformation": "Job-Informationen",
+  "Compensation": "Kompensation",
+  "Benefits": "Vorteile",
+  "TimeOff": "Auszeit",
+  "OrgChart": "Organigramm",
+  "WorkersComparison": "Arbeitervergleich",
+  "Development": "Entwicklung",
+  "Expenses": "Kosten",
+  "Reports": "Berichte",
+  "Audit": "Prüfung",
+  "MyFavorites": "Meine Favoriten",
+  "NewsUpdates": "News & Updates",
+  "Search": "Suche",
+  "UserProfile": "Benutzerprofil",
+  "AdminOptions": "Admin-Optionen",
+  "ProxyOptions": "Proxy-Optionen",
+  "ChangeLanguage": "Sprache ändern",
+  "Logout": "Ausloggen"
+}

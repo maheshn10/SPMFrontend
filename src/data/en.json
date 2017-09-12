@@ -1,0 +1,23 @@
+{
+  "Home": "Home",
+  "MyTeam": "My Team",
+  "PersonalInformation": "Personal Information",
+  "JobInformation": "Job Information",
+  "Compensation": "Compensation",
+  "Benefits": "Benefits",
+  "TimeOff": "Time Off",
+  "OrgChart": "Org Chart",
+  "WorkersComparison": "Workers Comparison",
+  "Development": "Development",
+  "Expenses": "Expenses",
+  "Reports": "Reports",
+  "Audit": "Audit",
+  "MyFavorites": "My Favorites",
+  "NewsUpdates": "News & Updates",
+  "Search": "Search",
+  "UserProfile": "User Profile",
+  "AdminOptions": "Admin Options",
+  "ProxyOptions": "Proxy Options",
+  "ChangeLanguage": "Change Language",
+  "Logout":"Logout"
+}

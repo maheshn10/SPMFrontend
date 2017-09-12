@@ -3,6 +3,8 @@
  * @author Mahesh
  */
 import React from 'react';
+import { connect } from 'react-redux';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 import './News.scss';
 
 class News extends React.Component {
@@ -14,7 +16,7 @@ class News extends React.Component {
             <div className="box-icon box-icon--first">
               <svg className="landing-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.95 43"><title>Zasób 4</title><polygon points="1.5 7.9 35.1 7.9 35.1 32.76 18.39 32.76 7.93 41.5 7.93 32.76 1.5 32.76 1.5 7.9 1.5 7.9" fill="none" stroke="#f4f7fa" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" /><polyline points="7.85 7.85 7.85 1.5 41.45 1.5 41.45 26.36 35.65 26.36" fill="none" stroke="#f4f7fa" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" /></svg>
             </div>
-            <h2 className="box-title">News &amp; Updates</h2>
+            <h2 className="box-title">{this.props.translate('NewsUpdates')}</h2>
             <div className="box-icons">
               <div className="box-icon">
                 <a>
@@ -56,4 +58,9 @@ class News extends React.Component {
   }
 }
 
-export default News;
+function mapStateToProps(state) {
+  return { translate: getTranslate(state.locale),
+    currentLanguage: getActiveLanguage(state.locale).code };
+}
+
+export default connect(mapStateToProps)(News);
