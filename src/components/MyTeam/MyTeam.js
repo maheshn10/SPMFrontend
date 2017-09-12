@@ -6,6 +6,24 @@ import React from 'react';
 import './MyTeam.scss';
 
 class MyTeam extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleElement = this.toggleElement.bind(this);
+    this.displayElement = this.displayElement.bind(this);
+    this.displayNoneElement = this.displayNoneElement.bind(this);
+  }
+  toggleElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.classList.toggle('active');
+  }
+  displayElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.style.display = 'block';
+  }
+  displayNoneElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.style.display = 'none';
+  }
   render() {
     return (
       <div className="container">
@@ -34,8 +52,8 @@ class MyTeam extends React.Component {
                     <li>
                       <div className="box-take-action js-box-dropdown">
                                                     Take Action
-                                                    <span className="box-filter-arrow" />
-                        <ul className="take-action box-dropdown-content js-box-dropdown-content">
+                                                    <span className="box-filter-arrow" onClick={() => this.toggleElement('addEmployee')} />
+                        <ul className="take-action box-dropdown-content js-box-dropdown-content" id="addEmployee">
                           <li><a className="js-show-add-employee" href="add-employee.html">Add New Employee</a></li>
                         </ul>
 
@@ -84,7 +102,7 @@ class MyTeam extends React.Component {
                                                                 Sales Manager <br /> 000132
                                                             </p>
                           </div>
-                          <div className="compare-more-info js-compare-more-info">More Info &raquo;</div>
+                          <div className="compare-more-info js-compare-more-info" onClick={() => this.displayElement('MoreInfo1')}>More Info &raquo;</div>
                         </div>
                         <div className="compare-single">
                           <img src="../../assets/images/global/sample-avatar.jpg" alt="" className="compare-avatar" />
@@ -143,12 +161,12 @@ class MyTeam extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-xs-12 col-md-8 worker-col">
+          <div className="col-xs-12 col-md-8 worker-col" id="MoreInfo1">
             <div className="box box--bg">
               <ul className="box-headings">
                 <li className="box-heading box-heading--worker active">
                   <h2 className="box-title">Samruddhi Vairat</h2>
-                  <div className="box-icon box-icon--close js-box-close" data-checkbox="compare-02">
+                  <div className="box-icon box-icon--close js-box-close" data-checkbox="compare-02" onClick={() => this.displayNoneElement('MoreInfo1')}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.75 27.75">
                       <title>icon-close</title>
                       <path
@@ -163,10 +181,10 @@ class MyTeam extends React.Component {
                 <div className="box-tab active">
                   <div className="box-inner">
                     <div className="box-nav">
-                      <div className="box-take-action js-box-dropdown">
+                      <div className="box-take-action js-box-dropdown" onClick={() => this.toggleElement('takeAction')}>
                                                     Take Action
                                                     <span className="box-filter-arrow" />
-                        <ul className="take-action box-dropdown-content js-box-dropdown-content">
+                        <ul className="take-action box-dropdown-content js-box-dropdown-content" id="takeAction" onClick={() => this.toggleElement('takeAction')}>
                           <li><a >Change Personal Details</a></li>
                           <li><a >Change Employment Details</a></li>
                           <li><a >Change Compensation</a></li>
@@ -191,7 +209,7 @@ class MyTeam extends React.Component {
                             <span className="person-pin">000661</span>
                           </div>
                         </div>
-                        <div className="toggler">
+                        <div className="toggler" id="toggler1" onClick={() => this.toggleElement('toggler1')}>
                           <div className="toggler-bar js-toggler-bar">
                             <h2 className="toggler-title">Current Job</h2>
                             <span className="box-filter-arrow" />
@@ -225,7 +243,7 @@ class MyTeam extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <div className="toggler">
+                        <div className="toggler" id="toggler2" onClick={() => this.toggleElement('toggler2')}>
                           <div className="toggler-bar js-toggler-bar">
                             <h2 className="toggler-title">Performance</h2>
                             <span className="box-filter-arrow" />
@@ -244,7 +262,7 @@ class MyTeam extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <div className="toggler">
+                        <div className="toggler" id="toggler3" onClick={() => this.toggleElement('toggler3')}>
 
                           <div className="toggler-bar js-toggler-bar">
                             <h2 className="toggler-title">Compensation</h2>
