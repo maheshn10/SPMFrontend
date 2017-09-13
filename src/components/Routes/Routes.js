@@ -15,6 +15,7 @@ import Expenses from '../Expenses/Expenses';
 import Reports from '../Reports/Reports';
 import Audit from '../Audit/Audit';
 import Terminate from '../Terminate/Terminate';
+import PromotionDemotion from '../PromotionDemotion/PromotionDemotion';
 
 class Routes extends React.Component {
   render() {
@@ -52,6 +53,7 @@ class Routes extends React.Component {
           <Route path="Reports" name="Reports" component={Reports} />
           <Route path="Audit" name="Audit" component={Audit} />
           <Route path="Terminate" name="Terminate" component={Terminate} />
+          <Route path="PromotionDemotion" name="PromotionDemotion" component={PromotionDemotion} />
         </Route>
       </Router>
     );
