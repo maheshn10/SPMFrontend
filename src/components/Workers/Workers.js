@@ -3,8 +3,32 @@
  * @author Mahesh
  */
 import React from 'react';
+import './Workers.scss';
 
 class Workers extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleElement = this.toggleElement.bind(this);
+    this.toggleElementChecked = this.toggleElementChecked.bind(this);
+    this.displayElement = this.displayElement.bind(this);
+    this.displayNoneElement = this.displayNoneElement.bind(this);
+  }
+  toggleElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.classList.toggle('active');
+  }
+  toggleElementChecked(elementID) {
+    const y = document.getElementById(elementID);
+    y.classList.toggle('display');
+  }
+  displayElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.style.display = 'block';
+  }
+  displayNoneElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.style.display = 'none';
+  }
   render() {
     return (
       <div className="container">
@@ -63,7 +87,7 @@ class Workers extends React.Component {
 
                         <div className="compare-single">
 
-                          <input type="checkbox" id="compare-01" className="compare-checkbox" />
+                          <input type="checkbox" id="compare-01" className="compare-checkbox" onClick={() => this.toggleElementChecked('workerCompare1')} />
                           <label htmlFor="compare-01" className="compare-label" />
                           <img src="../../assets/images/global/sample-avatar-2.jpg" alt="" className="compare-avatar" />
                           <div className="compare-user-info">
@@ -78,7 +102,7 @@ class Workers extends React.Component {
 
                         <div className="compare-single">
 
-                          <input type="checkbox" id="compare-02" className="compare-checkbox" />
+                          <input type="checkbox" id="compare-02" className="compare-checkbox" onClick={() => this.toggleElementChecked('workerCompare2')} />
                           <label htmlFor="compare-02" className="compare-label" />
                           <img src="../../assets/images/global/sample-avatar.jpg" alt="" className="compare-avatar" />
                           <div className="compare-user-info">
@@ -164,7 +188,7 @@ class Workers extends React.Component {
             </div>
 
           </div>
-          <div className="col-xs-12 col-md-4 worker-col worker-col-01">
+          <div className="col-xs-12 col-md-4 worker-col worker-col-01" id="workerCompare1">
 
             <div className="box box--bg">
 
@@ -220,9 +244,9 @@ class Workers extends React.Component {
 
                         </div>
 
-                        <div className="toggler">
+                        <div className="toggler" id="currentJob">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('currentJob')}>
                             <h2 className="toggler-title">Current job</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -262,9 +286,9 @@ class Workers extends React.Component {
 
                         </div>
 
-                        <div className="toggler">
+                        <div className="toggler" id="performance">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('performance')}>
                             <h2 className="toggler-title">Performance</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -290,9 +314,9 @@ class Workers extends React.Component {
 
                         </div>
 
-                        <div className="toggler">
+                        <div className="toggler" id="compensation2">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('compensation2')}>
                             <h2 className="toggler-title">Compensation</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -395,7 +419,7 @@ class Workers extends React.Component {
             </div>
 
           </div>
-          <div className="col-xs-12 col-md-4 worker-col worker-col-02">
+          <div className="col-xs-12 col-md-4 worker-col worker-col-02" id="workerCompare2">
 
             <div className="box box--bg">
 
@@ -451,9 +475,9 @@ class Workers extends React.Component {
 
                         </div>
 
-                        <div className="toggler">
+                        <div className="toggler" id="currentJob2">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('currentJob2')}>
                             <h2 className="toggler-title">Current job</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -493,9 +517,9 @@ class Workers extends React.Component {
 
                         </div>
 
-                        <div className="toggler">
+                        <div className="toggler" id="performance2">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('performance2')}>
                             <h2 className="toggler-title">Performance</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -521,9 +545,9 @@ class Workers extends React.Component {
 
                         </div>
 
-                        <div className="toggler">
+                        <div className="toggler" id="compensation1">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('compensation1')}>
                             <h2 className="toggler-title">Compensation</h2>
                             <span className="box-filter-arrow" />
                           </div>

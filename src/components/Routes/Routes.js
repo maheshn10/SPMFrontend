@@ -14,6 +14,7 @@ import Development from '../Development/Development';
 import Expenses from '../Expenses/Expenses';
 import Reports from '../Reports/Reports';
 import Audit from '../Audit/Audit';
+import Terminate from '../Terminate/Terminate';
 
 class Routes extends React.Component {
   render() {
@@ -23,17 +24,34 @@ class Routes extends React.Component {
         <Route path="/" component={Layout}>
           <IndexRoute component={Home} />
           <Route path="MyTeam" name="MyTeam" component={MyTeam} />
-          <Route path="PersonalInfo" name="PersonalInfo" component={PersonalInfo} />
+          <Route
+            path="PersonalInfo"
+            name="PersonalInfo"
+            component={PersonalInfo}
+          />
           <Route path="JobInfo" name="JobInfo" component={JobInfo} />
-          <Route path="Compensation" name="Compensation" component={Compensation} />
+          <Route
+            path="Compensation"
+            name="Compensation"
+            component={Compensation}
+          />
           <Route path="Benefits" name="Benefits" component={Benefits} />
           <Route path="TimeOff" name="TimeOff" component={TimeOff} />
-          <Route path="Organisation" name="Organisation" component={Organisation} />
+          <Route
+            path="Organisation"
+            name="Organisation"
+            component={Organisation}
+          />
           <Route path="Workers" name="Workers" component={Workers} />
-          <Route path="Development" name="Development" component={Development} />
+          <Route
+            path="Development"
+            name="Development"
+            component={Development}
+          />
           <Route path="Expenses" name="Expenses" component={Expenses} />
           <Route path="Reports" name="Reports" component={Reports} />
           <Route path="Audit" name="Audit" component={Audit} />
+          <Route path="Terminate" name="Terminate" component={Terminate} />
         </Route>
       </Router>
     );

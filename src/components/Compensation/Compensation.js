@@ -6,6 +6,14 @@ import React from 'react';
 import './Compensation.scss';
 
 class Compensation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleElement = this.toggleElement.bind(this);
+  }
+  toggleElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.classList.toggle('active');
+  }
   render() {
     return (
       <div className="container">
@@ -25,7 +33,7 @@ class Compensation extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="salary" onClick={() => this.toggleElement('salary')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -59,7 +67,7 @@ class Compensation extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="targetTotal" onClick={() => this.toggleElement('targetTotal')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -93,7 +101,7 @@ class Compensation extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="planworkTime" onClick={() => this.toggleElement('planworkTime')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -127,7 +135,7 @@ class Compensation extends React.Component {
 
               </div>
 
-              <div className="panel-edit">
+              <div className="panel-edit" id="companyRatio" onClick={() => this.toggleElement('companyRatio')}>
 
                 <div className="panel-edit-icon js-panel-edit" />
 
@@ -194,9 +202,9 @@ class Compensation extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="compensationGroup">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('compensationGroup')}>
                             <h2 className="toggler-title">Compensation Group</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -288,9 +296,9 @@ class Compensation extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="compensation">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('compensation')}>
                             <h2 className="toggler-title">Compensation</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -399,9 +407,9 @@ class Compensation extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="oneTimePayment">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('oneTimePayment')}>
                             <h2 className="toggler-title">One Time Payment</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -495,9 +503,9 @@ class Compensation extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="recuringDeductionPayment">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('recuringDeductionPayment')}>
                             <h2 className="toggler-title">Recurring Deduction / Payment</h2>
                             <span className="box-filter-arrow" />
                           </div>

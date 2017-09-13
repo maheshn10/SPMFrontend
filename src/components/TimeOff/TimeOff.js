@@ -6,6 +6,14 @@ import React from 'react';
 import './TimeOff.scss';
 
 class TimeOff extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleElement = this.toggleElement.bind(this);
+  }
+  toggleElement(elementID) {
+    const x = document.getElementById(elementID);
+    x.classList.toggle('active');
+  }
   render() {
     return (
       <div className="container">
@@ -46,9 +54,9 @@ class TimeOff extends React.Component {
 
                       <div className="box-inner box-inner--no-pad">
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="balanceSection">
 
-                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar">
+                          <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('balanceSection')}>
                             <h2 className="toggler-title">Balance as of Section</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -64,7 +72,7 @@ class TimeOff extends React.Component {
 
                               <div className="time-off-types">
 
-                                <div className="time-off-type type-vacation js-time-off-type" data-type="to-vacation">
+                                <div className="time-off-type type-vacation js-time-off-type" data-type="to-vacation" onClick={() => this.toggleElement('time-off-entry')}>
                                   <div className="type-name">Vacation</div>
                                   <div className="type-counter">16 days</div>
                                 </div>
@@ -94,9 +102,9 @@ class TimeOff extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="timeoffCalendar">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('timeoffCalendar')}>
                             <h2 className="toggler-title">Time-Off Calendar</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -159,9 +167,9 @@ class TimeOff extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="viewTeamCalndar">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('viewTeamCalndar')}>
                             <h2 className="toggler-title">View Team Calendar</h2>
                             <span className="box-filter-arrow" />
                           </div>
@@ -179,9 +187,9 @@ class TimeOff extends React.Component {
 
                         </div>
 
-                        <div className="toggler active">
+                        <div className="toggler active" id="myRequest">
 
-                          <div className="toggler-bar js-toggler-bar">
+                          <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('myRequest')}>
                             <h2 className="toggler-title">My Request</h2>
                             <span className="box-filter-arrow" />
                           </div>

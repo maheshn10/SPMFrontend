@@ -3,6 +3,7 @@
  * @author Mahesh
  */
 import React from 'react';
+import { Link } from 'react-router';
 import './MyTeam.scss';
 
 class MyTeam extends React.Component {
@@ -50,9 +51,9 @@ class MyTeam extends React.Component {
                   <h2 className="box-title">My Team</h2>
                   <ul className="box-actions">
                     <li>
-                      <div className="box-take-action js-box-dropdown">
+                      <div className="box-take-action js-box-dropdown" onClick={() => this.toggleElement('addEmployee')}>
                                                     Take Action
-                                                    <span className="box-filter-arrow" onClick={() => this.toggleElement('addEmployee')} />
+                                                    <span className="box-filter-arrow" />
                         <ul className="take-action box-dropdown-content js-box-dropdown-content" id="addEmployee">
                           <li><a className="js-show-add-employee" href="add-employee.html">Add New Employee</a></li>
                         </ul>
@@ -189,7 +190,7 @@ class MyTeam extends React.Component {
                           <li><a >Change Employment Details</a></li>
                           <li><a >Change Compensation</a></li>
                           <li><a >Change Benefits</a></li>
-                          <li><a href="terminate.html">Terminate</a></li>
+                          <li><Link to="Terminate">Terminate</Link></li>
                           <li><a >Manage Recurring and Deduction</a></li>
                           <li><a href="promotion-demotion.html">Promotion / Demotion</a></li>
                           <li><a href="organization-change.html">Change Organization</a></li>
