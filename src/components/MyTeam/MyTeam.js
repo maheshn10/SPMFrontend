@@ -192,7 +192,7 @@ class MyTeam extends React.Component {
                           <li><a >{this.props.translate('ChangeEmploymentDetails')}</a></li>
                           <li><a >{this.props.translate('ChangeCompensation')}</a></li>
                           <li><a >{this.props.translate('ChangeBenefits')}</a></li>
-                          <li><a href="terminate.html">{this.props.translate('Terminate')}</a></li>
+                          <li> <Link to="Terminate">{this.props.translate('Terminate')}</Link></li>
                           <li><a >{this.props.translate('ManageRecurringandDeduction')}</a></li>
                           <li><a href="promotion-demotion.html">{this.props.translate('PromotionDemotion')}</a></li>
                           <li><a href="organization-change.html">{this.props.translate('ChangeOrganization')}</a></li>
