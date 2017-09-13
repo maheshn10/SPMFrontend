@@ -3,6 +3,8 @@
  * @author Mahesh
  */
 import React from 'react';
+import { connect } from 'react-redux';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 import './MyTeam.scss';
 
 class MyTeam extends React.Component {
@@ -47,14 +49,14 @@ class MyTeam extends React.Component {
                       </g>
                     </svg>
                   </div>
-                  <h2 className="box-title">My Team</h2>
+                  <h2 className="box-title">{this.props.translate('MyTeam')}</h2>
                   <ul className="box-actions">
                     <li>
                       <div className="box-take-action js-box-dropdown">
-                                                    Take Action
-                                                    <span className="box-filter-arrow" onClick={() => this.toggleElement('addEmployee')} />
+                        {this.props.translate('TakeAction')}
+                        <span className="box-filter-arrow" onClick={() => this.toggleElement('addEmployee')} />
                         <ul className="take-action box-dropdown-content js-box-dropdown-content" id="addEmployee">
-                          <li><a className="js-show-add-employee" href="add-employee.html">Add New Employee</a></li>
+                          <li><a className="js-show-add-employee" href="add-employee.html">{this.props.translate('AddNewEmployee')}</a></li>
                         </ul>
 
                       </div>
@@ -83,12 +85,12 @@ class MyTeam extends React.Component {
                     <div className="box-nav">
                       <div action="#" className="box-search">
                         <input type="submit" value="" className="navbar-search-submit" />
-                        <input type="text" className="search navbar-search-input" placeholder="Search" />
+                        <input type="text" className="search navbar-search-input" placeholder={this.props.translate('Search')} />
                       </div>
                       <div className="box-filter">
                         <span className="box-filter-text">
-                                                        Filter
-                         <span className="box-filter-arrow" />
+                          {this.props.translate('Filter')}
+                          <span className="box-filter-arrow" />
                         </span>
                       </div>
                     </div>
@@ -102,7 +104,7 @@ class MyTeam extends React.Component {
                                                                 Sales Manager <br /> 000132
                                                             </p>
                           </div>
-                          <div className="compare-more-info js-compare-more-info" onClick={() => this.displayElement('MoreInfo1')}>More Info &raquo;</div>
+                          <div className="compare-more-info js-compare-more-info" onClick={() => this.displayElement('MoreInfo1')}>{this.props.translate('MoreInfo')} &raquo;</div>
                         </div>
                         <div className="compare-single">
                           <img src="../../assets/images/global/sample-avatar.jpg" alt="" className="compare-avatar" />
@@ -112,7 +114,7 @@ class MyTeam extends React.Component {
                                                                 Director <br /> 000661
                                                             </p>
                           </div>
-                          <div className="compare-more-info js-compare-more-info">More Info &raquo;</div>
+                          <div className="compare-more-info js-compare-more-info">{this.props.translate('MoreInfo')} &raquo;</div>
                         </div>
                         <div className="compare-single">
                           <img src="../../assets/images/global/sample-avatar-4.jpg" alt="" className="compare-avatar" />
@@ -122,7 +124,7 @@ class MyTeam extends React.Component {
                                                                 Department Manager <br /> 000665
                                                             </p>
                           </div>
-                          <div className="compare-more-info js-compare-more-info">More Info &raquo;</div>
+                          <div className="compare-more-info js-compare-more-info">{this.props.translate('MoreInfo')} &raquo;</div>
                         </div>
                         <div className="compare-single">
                           <img src="../../assets/images/global/sample-avatar-5.jpg" alt="" className="compare-avatar" />
@@ -132,7 +134,7 @@ class MyTeam extends React.Component {
                                                                 Sales Manager <br /> 000225
                                                             </p>
                           </div>
-                          <div className="compare-more-info js-compare-more-info">More Info &raquo;</div>
+                          <div className="compare-more-info js-compare-more-info">{this.props.translate('MoreInfo')} &raquo;</div>
                         </div>
                         <div className="compare-single">
                           <img src="../../assets/images/global/sample-avatar-3.jpg" alt="" className="compare-avatar" />
@@ -142,7 +144,7 @@ class MyTeam extends React.Component {
                                                                 Director <br /> 000223
                                                             </p>
                           </div>
-                          <div className="compare-more-info js-compare-more-info">More Info &raquo;</div>
+                          <div className="compare-more-info js-compare-more-info">{this.props.translate('MoreInfo')} &raquo;</div>
                         </div>
                         <div className="compare-single">
                           <img src="../../assets/images/global/sample-avatar-6.jpg" alt="" className="compare-avatar" />
@@ -152,7 +154,7 @@ class MyTeam extends React.Component {
                                                                 Department Manager <br /> 003265
                                                             </p>
                           </div>
-                          <div className="compare-more-info js-compare-more-info">More Info &raquo;</div>
+                          <div className="compare-more-info js-compare-more-info">{this.props.translate('MoreInfo')} &raquo;</div>
                         </div>
                       </div>
                     </div>
@@ -182,18 +184,18 @@ class MyTeam extends React.Component {
                   <div className="box-inner">
                     <div className="box-nav">
                       <div className="box-take-action js-box-dropdown" onClick={() => this.toggleElement('takeAction')}>
-                                                    Take Action
-                                                    <span className="box-filter-arrow" />
+                        {this.props.translate('TakeAction')}
+                        <span className="box-filter-arrow" />
                         <ul className="take-action box-dropdown-content js-box-dropdown-content" id="takeAction" onClick={() => this.toggleElement('takeAction')}>
-                          <li><a >Change Personal Details</a></li>
-                          <li><a >Change Employment Details</a></li>
-                          <li><a >Change Compensation</a></li>
-                          <li><a >Change Benefits</a></li>
-                          <li><a href="terminate.html">Terminate</a></li>
-                          <li><a >Manage Recurring and Deduction</a></li>
-                          <li><a href="promotion-demotion.html">Promotion / Demotion</a></li>
-                          <li><a href="organization-change.html">Change Organization</a></li>
-                          <li><a href="transfer.html">Transfer</a></li>
+                          <li><a >{this.props.translate('ChangePersonalDetails')}</a></li>
+                          <li><a >{this.props.translate('ChangeEmploymentDetails')}</a></li>
+                          <li><a >{this.props.translate('ChangeCompensation')}</a></li>
+                          <li><a >{this.props.translate('ChangeBenefits')}</a></li>
+                          <li><a href="terminate.html">{this.props.translate('Terminate')}</a></li>
+                          <li><a >{this.props.translate('ManageRecurringandDeduction')}</a></li>
+                          <li><a href="promotion-demotion.html">{this.props.translate('PromotionDemotion')}</a></li>
+                          <li><a href="organization-change.html">{this.props.translate('ChangeOrganization')}</a></li>
+                          <li><a href="transfer.html">{this.props.translate('Transfer')}</a></li>
                         </ul>
                       </div>
                     </div>
@@ -211,7 +213,7 @@ class MyTeam extends React.Component {
                         </div>
                         <div className="toggler" id="toggler1" onClick={() => this.toggleElement('toggler1')}>
                           <div className="toggler-bar js-toggler-bar">
-                            <h2 className="toggler-title">Current Job</h2>
+                            <h2 className="toggler-title">{this.props.translate('CurrentJob')}</h2>
                             <span className="box-filter-arrow" />
                           </div>
                           <div className="toggler-content">
@@ -219,23 +221,23 @@ class MyTeam extends React.Component {
                               <table className="table">
                                 <tbody>
                                   <tr>
-                                    <td><span className="table-label">Position:</span></td>
+                                    <td><span className="table-label">{this.props.translate('Position')}:</span></td>
                                     <td>Director, Global Support - EMEA</td>
                                   </tr>
                                   <tr>
-                                    <td><span className="table-label">Manager:</span></td>
+                                    <td><span className="table-label">{this.props.translate('Manager')}:</span></td>
                                     <td>Susan Stainberg</td>
                                   </tr>
                                   <tr>
-                                    <td><span className="table-label">Organisation:</span>:</td>
+                                    <td><span className="table-label">{this.props.translate('Organisation')}:</span>:</td>
                                     <td>Global Support Center</td>
                                   </tr>
                                   <tr>
-                                    <td><span className="table-label">Grade:</span></td>
+                                    <td><span className="table-label">{this.props.translate('Grade')}:</span></td>
                                     <td>Management</td>
                                   </tr>
                                   <tr>
-                                    <td><span className="table-label">Grade profile:</span></td>
+                                    <td><span className="table-label">{this.props.translate('GradeProfile')}:</span></td>
                                     <td>Sweden</td>
                                   </tr>
                                 </tbody>
@@ -253,19 +255,19 @@ class MyTeam extends React.Component {
                               <table className="table">
                                 <tbody>
                                   <tr>
-                                    <td><span className="table-label">Previous review rating::</span></td>
+                                    <td><span className="table-label">{this.props.translate('Previousreviewrating')}:</span></td>
                                     <td>3 - Meets Expectations</td>
                                   </tr>
                                 </tbody>
                               </table>
-                              <a className="compare-view-history">View History</a>
+                              <a className="compare-view-history">{this.props.translate('ViewHistory')}</a>
                             </div>
                           </div>
                         </div>
                         <div className="toggler" id="toggler3" onClick={() => this.toggleElement('toggler3')}>
 
                           <div className="toggler-bar js-toggler-bar">
-                            <h2 className="toggler-title">Compensation</h2>
+                            <h2 className="toggler-title">{this.props.translate('Compensation')}</h2>
                             <span className="box-filter-arrow" />
                           </div>
                           <div className="toggler-content">
@@ -289,7 +291,7 @@ class MyTeam extends React.Component {
                                 </div>
 
                                 <div className="compensation-data">
-                                  <div className="compensation-text">Pay range</div>
+                                  <div className="compensation-text">{this.props.translate('PAYRANGE')}</div>
                                   <div className="compensation-amount">
                                                                             700, 000 - 975, 000
                                                                         </div>
@@ -298,14 +300,14 @@ class MyTeam extends React.Component {
                               </div>
                               <table className="table-compensation">
                                 <tr>
-                                  <th>Compensation basis</th>
-                                  <th>Current</th>
-                                  <th>New</th>
-                                  <th>Currency</th>
+                                  <th>{this.props.translate('COMPENSATIONBASIS')}</th>
+                                  <th>{this.props.translate('CURRENT')}</th>
+                                  <th>{this.props.translate('NEW')}</th>
+                                  <th>{this.props.translate('CURRENCY')}</th>
                                 </tr>
                                 <tr>
                                   <td>
-                                    <strong>On target earnings</strong>
+                                    <strong>{this.props.translate('ONTARGETEARNINGS')}</strong>
                                   </td>
                                   <td>
                                     <strong>962, 500, 00</strong> <br /> 143, 123,
@@ -321,7 +323,7 @@ class MyTeam extends React.Component {
                                 </tr>
                                 <tr>
                                   <td>
-                                    <strong>Total Base Pay</strong>
+                                    <strong>{this.props.translate('TOTALBASEPAY')}</strong>
                                   </td>
                                   <td>
                                     <strong>922, 120, 00</strong> <br /> 343, 123,
@@ -337,7 +339,7 @@ class MyTeam extends React.Component {
                                 </tr>
                                 <tr>
                                   <td>
-                                    <strong>Total Salary &amp; Allowances</strong>
+                                    <strong>{this.props.translate('TOTALSALARYALLOWANCES')}</strong>
                                   </td>
                                   <td>
                                     <strong>922, 120, 00</strong> <br /> 343, 123,
@@ -368,4 +370,9 @@ class MyTeam extends React.Component {
   }
 }
 
-export default MyTeam;
+function mapStateToProps(state) {
+  return { translate: getTranslate(state.locale),
+    currentLanguage: getActiveLanguage(state.locale).code };
+}
+
+export default connect(mapStateToProps)(MyTeam);
