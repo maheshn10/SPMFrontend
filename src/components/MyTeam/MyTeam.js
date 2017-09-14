@@ -57,7 +57,7 @@ class MyTeam extends React.Component {
                         {this.props.translate('TakeAction')}
                         <span className="box-filter-arrow" onClick={() => this.toggleElement('addEmployee')} />
                         <ul className="take-action box-dropdown-content js-box-dropdown-content" id="addEmployee">
-                          <li><a className="js-show-add-employee" href="add-employee.html">{this.props.translate('AddNewEmployee')}</a></li>
+                          <li><Link to="AddEmployee" className="js-show-add-employee">{this.props.translate('AddNewEmployee')}</Link></li>
                         </ul>
 
                       </div>

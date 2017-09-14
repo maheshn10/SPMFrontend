@@ -18,6 +18,7 @@ import Terminate from '../Terminate/Terminate';
 import PromotionDemotion from '../PromotionDemotion/PromotionDemotion';
 import OrganizationChange from '../OrganizationChange/OrganizationChange';
 import Transfer from '../Transfer/Transfer';
+import AddEmployee from '../AddEmployee/AddEmployee';
 
 class Routes extends React.Component {
   render() {
@@ -58,6 +59,7 @@ class Routes extends React.Component {
           <Route path="PromotionDemotion" name="PromotionDemotion" component={PromotionDemotion} />
           <Route path="OrganizationChange" name="OrganizationChange" component={OrganizationChange} />
           <Route path="Transfer" name="Transfer" component={Transfer} />
+          <Route path="AddEmployee" name="AddEmployee" component={AddEmployee} />
         </Route>
       </Router>
     );
