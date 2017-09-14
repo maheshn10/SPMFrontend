@@ -1,5 +1,5 @@
 /**
- * @file Terminate Component.
+ * @file Promotion Demotion Component.
  * @author Mahesh
  */
 import React from 'react';

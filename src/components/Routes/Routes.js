@@ -16,6 +16,8 @@ import Reports from '../Reports/Reports';
 import Audit from '../Audit/Audit';
 import Terminate from '../Terminate/Terminate';
 import PromotionDemotion from '../PromotionDemotion/PromotionDemotion';
+import OrganizationChange from '../OrganizationChange/OrganizationChange';
+import Transfer from '../Transfer/Transfer';
 
 class Routes extends React.Component {
   render() {
@@ -54,6 +56,8 @@ class Routes extends React.Component {
           <Route path="Audit" name="Audit" component={Audit} />
           <Route path="Terminate" name="Terminate" component={Terminate} />
           <Route path="PromotionDemotion" name="PromotionDemotion" component={PromotionDemotion} />
+          <Route path="OrganizationChange" name="OrganizationChange" component={OrganizationChange} />
+          <Route path="Transfer" name="Transfer" component={Transfer} />
         </Route>
       </Router>
     );
