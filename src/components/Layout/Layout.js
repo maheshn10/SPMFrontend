@@ -21,24 +21,27 @@ class Layout extends React.Component {
   }
   render() {
     const { location } = this.props;
+    const mypath = location.pathname;
     console.log(location.pathname);
     return (
       <div>
-        <SideMenuBar />
-        <main className="app">
-          <div className="app-wrapper">
-            <NavBar />
-            <div className="app-container">
-              <div className="container">
-                <div className="page-nav">
-                  <BreadCrumbs />
-                  <Help />
+        {mypath === '/Login'? this.props.children:
+          <SideMenuBar />
+          <main className="app">
+            <div className="app-wrapper">
+              <NavBar />
+                <div className="app-container">
+                  <div className="container">
+                    <div className="page-nav">
+                      <BreadCrumbs />
+                      <Help />
+                    </div>
+                  </div>
+                  {this.props.children}
                 </div>
-              </div>
-              {this.props.children}
             </div>
-          </div>
-        </main>
+          </main>
+        }
       </div>
     );
   }

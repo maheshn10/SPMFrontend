@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import Login from '../Login/Login';
 import Layout from '../Layout/Layout';
 import Home from '../Home/Home';
 import MyTeam from '../MyTeam/MyTeam';
@@ -33,6 +34,7 @@ class Routes extends React.Component {
             name="PersonalInfo"
             component={PersonalInfo}
           />
+          <Route path="Login" name="Login" component={Login} />
           <Route path="JobInfo" name="JobInfo" component={JobInfo} />
           <Route
             path="Compensation"
