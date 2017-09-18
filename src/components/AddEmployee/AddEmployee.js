@@ -9,19 +9,163 @@ class AddEmployee extends React.Component {
   constructor(props) {
     super(props);
     this.toggleElement = this.toggleElement.bind(this);
-    this.tabChange = this.tabChange.bind(this);
+    // this.tabChange = this.tabChange.bind(this);
+    this.nextStep = this.nextStep.bind(this);
+    this.prevStep = this.prevStep.bind(this);
+    this.state = {
+      breadcrumbPosition: 1
+    };
   }
   toggleElement(elementID) {
     const x = document.getElementById(elementID);
     x.classList.toggle('active');
   }
-  tabChange(e) {
-    console.log(e.target);
-    if (!e.target.classList.contains('active')) {
-      console.log('test');
+  nextStep() {
+    switch (this.state.breadcrumbPosition) {
+      case 1: {
+        const p = document.getElementById('identify');
+        const n = document.getElementById('personalInfo');
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('prevButton').style.display = 'block';
+        document.getElementById('step1').style.display = 'none';
+        if (p.classList.contains('active')) {
+          p.classList.remove('active');
+          p.classList.add('done');
+        }
+        if (n.classList.contains('active')) {
+          n.classList.remove('active');
+        } else {
+          n.classList.add('active');
+        }
+        this.setState({ breadcrumbPosition: 2 });
+        break;
+      }
+
+      case 2: {
+        const pi = document.getElementById('personalInfo');
+        const ji = document.getElementById('jobInfo');
+        document.getElementById('step3').style.display = 'block';
+        document.getElementById('prevButton').style.display = 'block';
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'none';
+        if (pi.classList.contains('active')) {
+          pi.classList.remove('active');
+          pi.classList.add('done');
+        }
+        if (ji.classList.contains('active')) {
+          ji.classList.remove('active');
+        } else {
+          ji.classList.add('active');
+        }
+        this.setState({ breadcrumbPosition: 3 });
+        break;
+      }
+
+      case 3: {
+        const jin = document.getElementById('jobInfo');
+        const c = document.getElementById('compensationInfo');
+        document.getElementById('step4').style.display = 'block';
+        document.getElementById('prevButton').style.display = 'block';
+        document.getElementById('nextButton').style.display = 'none';
+        document.getElementById('saveButton').style.display = 'block';
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step3').style.display = 'none';
+        if (jin.classList.contains('active')) {
+          jin.classList.remove('active');
+          jin.classList.add('done');
+        }
+        if (c.classList.contains('active')) {
+          c.classList.remove('active');
+        } else {
+          c.classList.add('active');
+        }
+        this.setState({ breadcrumbPosition: 4 });
+        break;
+      }
+
+      default: {
+        const i = document.getElementById('identify');
+        document.getElementById('step1').style.display = 'block';
+        document.getElementById('prevButton').style.display = 'block';
+        document.getElementById('nextButton').style.display = 'block';
+        document.getElementById('saveButton').style.display = 'none';
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step3').style.display = 'none';
+        document.getElementById('step4').style.display = 'none';
+        i.classList.remove('done');
+        this.setState({ breadcrumbPosition: 1 });
+        break;
+      }
     }
   }
-
+  prevStep() {
+    switch (this.state.breadcrumbPosition) {
+      case 4: {
+        const jin = document.getElementById('jobInfo');
+        const c = document.getElementById('compensationInfo');
+        document.getElementById('step3').style.display = 'block';
+        document.getElementById('prevButton').style.display = 'block';
+        document.getElementById('nextButton').style.display = 'block';
+        document.getElementById('saveButton').style.display = 'none';
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step4').style.display = 'none';
+        if (jin.classList.contains('done')) {
+          jin.classList.remove('done');
+          jin.classList.add('active');
+        }
+        if (c.classList.contains('active')) {
+          c.classList.remove('active');
+        }
+        this.setState({ breadcrumbPosition: 3 });
+        break;
+      }
+      case 3: {
+        const p = document.getElementById('personalInfo');
+        const ji = document.getElementById('jobInfo');
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('prevButton').style.display = 'block';
+        document.getElementById('nextButton').style.display = 'block';
+        document.getElementById('saveButton').style.display = 'none';
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step3').style.display = 'none';
+        document.getElementById('step4').style.display = 'none';
+        if (p.classList.contains('done')) {
+          p.classList.remove('done');
+          p.classList.add('active');
+        }
+        if (ji.classList.contains('active')) {
+          ji.classList.remove('active');
+        }
+        this.setState({ breadcrumbPosition: 2 });
+        break;
+      }
+      case 2: {
+        const i = document.getElementById('identify');
+        const pi = document.getElementById('personalInfo');
+        document.getElementById('step1').style.display = 'block';
+        document.getElementById('prevButton').style.display = 'none';
+        document.getElementById('nextButton').style.display = 'block';
+        document.getElementById('saveButton').style.display = 'none';
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step3').style.display = 'none';
+        document.getElementById('step4').style.display = 'none';
+        if (i.classList.contains('done')) {
+          i.classList.remove('done');
+          i.classList.add('active');
+        }
+        if (pi.classList.contains('active')) {
+          pi.classList.remove('active');
+        }
+        this.setState({ breadcrumbPosition: 1 });
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  }
   render() {
     return (
       <div className="container">
@@ -33,7 +177,7 @@ class AddEmployee extends React.Component {
                   <div className="steps-placeholder">
                     <div className="steps-nav panel">
                       <ul className="step-steps cd-multi-steps text-top">
-                        <li>
+                        <li className="active" id="identify">
                           {' '}
                           <a href="#step1">
                             {' '}
@@ -42,7 +186,7 @@ class AddEmployee extends React.Component {
                           </a>
                           {' '}
                         </li>
-                        <li>
+                        <li className="" id="personalInfo">
                           {' '}
                           <a href="#step2">
                             {' '}
@@ -53,7 +197,7 @@ class AddEmployee extends React.Component {
                           </a>
                           {' '}
                         </li>
-                        <li>
+                        <li className="" id="jobInfo">
                           {' '}
                           <a href="#step3">
                             {' '}
@@ -62,7 +206,7 @@ class AddEmployee extends React.Component {
                           </a>
                           {' '}
                         </li>
-                        <li>
+                        <li className="" id="compensationInfo">
                           {' '}
                           <a href="#step4">
                             {' '}
@@ -75,13 +219,27 @@ class AddEmployee extends React.Component {
                         </li>
                       </ul>
                       <div className="step-footer">
-                        <button className="step-prev" data-direction="prev">
+                        <button
+                          className="step-prev"
+                          data-direction="prev"
+                          id="prevButton"
+                          onClick={() => this.prevStep()}
+                        >
                           Previous
                         </button>
-                        <button className="step-next" data-direction="next">
+                        <button
+                          className="step-next"
+                          data-direction="next"
+                          id="nextButton"
+                          onClick={() => this.nextStep()}
+                        >
                           Next
                         </button>
-                        <button className="step-save" data-direction="finish">
+                        <button
+                          className="step-save"
+                          id="saveButton"
+                          data-direction="finish"
+                        >
                           Save
                         </button>
                       </div>
@@ -231,8 +389,15 @@ class AddEmployee extends React.Component {
                         <div className="box-content">
                           <div className="box-tab active">
                             <div className="box-inner box-inner--no-pad">
-                              <div className="toggler active" id="biographicalInfo">
-                                <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('biographicalInfo')}>
+                              <div
+                                className="toggler active"
+                                id="biographicalInfo"
+                              >
+                                <div
+                                  className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                  onClick={() =>
+                                    this.toggleElement('biographicalInfo')}
+                                >
                                   <h2 className="toggler-title">
                                     Biographical Information
                                   </h2>
@@ -378,7 +543,10 @@ class AddEmployee extends React.Component {
                         </ul>
                         <div className="box-inner box-inner--no-pad">
                           <div className="toggler active" id="personalInfo">
-                            <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('personalInfo')}>
+                            <div
+                              className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                              onClick={() => this.toggleElement('personalInfo')}
+                            >
                               <h2 className="toggler-title">
                                 Personal Information
                               </h2>
@@ -636,8 +804,15 @@ class AddEmployee extends React.Component {
                               </table>
                             </div>
                           </div>
-                          <div className="toggler active" id="countrySpecificFields">
-                            <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('countrySpecificFields')}>
+                          <div
+                            className="toggler active"
+                            id="countrySpecificFields"
+                          >
+                            <div
+                              className="toggler-bar js-toggler-bar"
+                              onClick={() =>
+                                this.toggleElement('countrySpecificFields')}
+                            >
                               <h2 className="toggler-title">
                                 Country Specific Fields
                               </h2>
@@ -950,7 +1125,11 @@ class AddEmployee extends React.Component {
                           <div className="box-tab active">
                             <div className="box-inner box-inner--no-pad">
                               <div className="toggler active" id="homeAddress">
-                                <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('homeAddress')}>
+                                <div
+                                  className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                  onClick={() =>
+                                    this.toggleElement('homeAddress')}
+                                >
                                   <h2 className="toggler-title">
                                     Home Address
                                   </h2>
@@ -1069,8 +1248,15 @@ class AddEmployee extends React.Component {
                                   </table>
                                 </div>
                               </div>
-                              <div className="toggler active" id="MailingAddress">
-                                <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('MailingAddress')}>
+                              <div
+                                className="toggler active"
+                                id="MailingAddress"
+                              >
+                                <div
+                                  className="toggler-bar js-toggler-bar"
+                                  onClick={() =>
+                                    this.toggleElement('MailingAddress')}
+                                >
                                   <h2 className="toggler-title">
                                     Mailing Address
                                   </h2>
@@ -1453,7 +1639,11 @@ class AddEmployee extends React.Component {
                           <div className="box-tab active">
                             <div className="box-inner box-inner--no-pad">
                               <div className="toggler active" id="emailInfo">
-                                <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('emailInfo')}>
+                                <div
+                                  className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                  onClick={() =>
+                                    this.toggleElement('emailInfo')}
+                                >
                                   <h2 className="toggler-title">
                                     Email information
                                   </h2>
@@ -1497,7 +1687,11 @@ class AddEmployee extends React.Component {
                                 </div>
                               </div>
                               <div className="toggler active" id="phoneInfo">
-                                <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('phoneInfo')}>
+                                <div
+                                  className="toggler-bar js-toggler-bar"
+                                  onClick={() =>
+                                    this.toggleElement('phoneInfo')}
+                                >
                                   <h2 className="toggler-title">
                                     Phone information
                                   </h2>
@@ -1606,8 +1800,15 @@ class AddEmployee extends React.Component {
                             <div className="col-xs-12">
                               <div className="box-tab active">
                                 <div className="box-inner box-inner--no-pad">
-                                  <div className="toggler active" id="keyJobAttribute">
-                                    <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('keyJobAttribute')}>
+                                  <div
+                                    className="toggler active"
+                                    id="keyJobAttribute"
+                                  >
+                                    <div
+                                      className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('keyJobAttribute')}
+                                    >
                                       <h2 className="toggler-title">
                                         Key Job Attribute
                                       </h2>
@@ -1648,8 +1849,15 @@ class AddEmployee extends React.Component {
                                       </table>
                                     </div>
                                   </div>
-                                  <div className="toggler active" id="orgnlInfo">
-                                    <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('orgnlInfo')}>
+                                  <div
+                                    className="toggler active"
+                                    id="orgnlInfo"
+                                  >
+                                    <div
+                                      className="toggler-bar js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('orgnlInfo')}
+                                    >
                                       <h2 className="toggler-title">
                                         Organizational Information
                                       </h2>
@@ -1768,7 +1976,11 @@ class AddEmployee extends React.Component {
                               <div className="box-tab active">
                                 <div className="box-inner box-inner--no-pad">
                                   <div className="toggler active" id="jobInfo">
-                                    <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('jobInfo')}>
+                                    <div
+                                      className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('jobInfo')}
+                                    >
                                       <h2 className="toggler-title">
                                         Job Information
                                       </h2>
@@ -1907,7 +2119,11 @@ class AddEmployee extends React.Component {
                                     </div>
                                   </div>
                                   <div className="toggler active" id="timeInfo">
-                                    <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('timeInfo')}>
+                                    <div
+                                      className="toggler-bar js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('timeInfo')}
+                                    >
                                       <h2 className="toggler-title">
                                         Time Information
                                       </h2>
@@ -1968,8 +2184,15 @@ class AddEmployee extends React.Component {
                             <div className="col-xs-12">
                               <div className="box-tab active">
                                 <div className="box-inner--top">
-                                  <div className="toggler active" id="countrySpecific">
-                                    <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('countrySpecific')}>
+                                  <div
+                                    className="toggler active"
+                                    id="countrySpecific"
+                                  >
+                                    <div
+                                      className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('countrySpecific')}
+                                    >
                                       <h2 className="toggler-title">
                                         Country Specific - USA
                                       </h2>
@@ -2379,7 +2602,11 @@ class AddEmployee extends React.Component {
                           <div className="box-tab active">
                             <div className="box-inner box-inner--no-pad">
                               <div className="toggler active" id="globalFields">
-                                <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('globalFields')}>
+                                <div
+                                  className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                  onClick={() =>
+                                    this.toggleElement('globalFields')}
+                                >
                                   <h2 className="toggler-title">
                                     Global fields
                                   </h2>
@@ -2523,8 +2750,15 @@ class AddEmployee extends React.Component {
                         <div className="box-content">
                           <div className="box-tab active">
                             <div className="box-inner box-inner--no-pad">
-                              <div className="toggler active" id="globalFields2">
-                                <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('globalFields2')}>
+                              <div
+                                className="toggler active"
+                                id="globalFields2"
+                              >
+                                <div
+                                  className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                  onClick={() =>
+                                    this.toggleElement('globalFields2')}
+                                >
                                   <h2 className="toggler-title">
                                     Global fields
                                   </h2>
@@ -2677,11 +2911,18 @@ class AddEmployee extends React.Component {
                         </ul>
                         <div className="box-content">
                           <div className="row-no-padding">
-                            <div className="col-xs-12">
+                            <div className="col-xs-12 col-lg-12 no-padding">
                               <div className="box-tab active">
                                 <div className="box-inner box-inner--no-pad">
-                                  <div className="toggler active" id="compensationGroup">
-                                    <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('compensationGroup')}>
+                                  <div
+                                    className="toggler active"
+                                    id="compensationGroup"
+                                  >
+                                    <div
+                                      className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('compensationGroup')}
+                                    >
                                       <h2 className="toggler-title">
                                         Compensation Group
                                       </h2>
@@ -2813,8 +3054,15 @@ class AddEmployee extends React.Component {
                                       </table>
                                     </div>
                                   </div>
-                                  <div className="toggler active" id="compensation">
-                                    <div className="toggler-bar js-toggler-bar" onClick={() => this.toggleElement('compensation')}>
+                                  <div
+                                    className="toggler active"
+                                    id="compensation"
+                                  >
+                                    <div
+                                      className="toggler-bar js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('compensation')}
+                                    >
                                       <h2 className="toggler-title">
                                         Compensation
                                       </h2>
@@ -2957,8 +3205,15 @@ class AddEmployee extends React.Component {
                             <div className="col-xs-12 col-lg-12 no-padding">
                               <div className="box-tab active">
                                 <div className="box-inner box-inner--no-pad">
-                                  <div className="toggler active" id="timePayment">
-                                    <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('timePayment')}>
+                                  <div
+                                    className="toggler active"
+                                    id="timePayment"
+                                  >
+                                    <div
+                                      className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement('timePayment')}
+                                    >
                                       <h2 className="toggler-title">
                                         One Time Payment
                                       </h2>
@@ -3096,8 +3351,17 @@ class AddEmployee extends React.Component {
                             <div className="col-xs-12 col-lg-12 no-padding">
                               <div className="box-tab active">
                                 <div className="box-inner box-inner--no-pad">
-                                  <div className="toggler active" id="recurringDeduction">
-                                    <div className="toggler-bar toggler-bar--no-top js-toggler-bar" onClick={() => this.toggleElement('recurringDeduction')}>
+                                  <div
+                                    className="toggler active"
+                                    id="recurringDeduction"
+                                  >
+                                    <div
+                                      className="toggler-bar toggler-bar--no-top js-toggler-bar"
+                                      onClick={() =>
+                                        this.toggleElement(
+                                          'recurringDeduction'
+                                        )}
+                                    >
                                       <h2 className="toggler-title">
                                         Recurring Deduction / Payment
                                       </h2>
