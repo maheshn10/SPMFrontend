@@ -18,7 +18,7 @@ class PersonalInfo extends React.Component {
     return (
       <div className="container">
         <div className="row row--panel">
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
             <div className="panel key">
               <div className="key-icon">
                 <img src="/assets/images/icons/key-money.svg" alt="" />
@@ -80,7 +80,7 @@ class PersonalInfo extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
             <div className="panel key">
               <div className="key-icon">
                 <img src="/assets/images/icons/key-goal.svg" alt="" />
@@ -142,7 +142,7 @@ class PersonalInfo extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
             <div className="panel key">
               <div className="key-icon">
                 <img src="/assets/images/icons/key-docs.svg" alt="" />
@@ -204,7 +204,7 @@ class PersonalInfo extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
             <div className="panel key">
               <div className="key-icon">
                 <img src="/assets/images/icons/key-docs.svg" alt="" />
@@ -351,10 +351,10 @@ class PersonalInfo extends React.Component {
                         <table className="table table--stripes">
                           <tbody>
                             <tr>
-                              <td className="table-align">
+                              <td className="table-align" width="50%">
                                 <span className="table-label">First Name:</span>
                               </td>
-                              <td>Text</td>
+                              <td width="50%">Text</td>
                             </tr>
                             <tr>
                               <td className="table-align">
@@ -611,7 +611,7 @@ class PersonalInfo extends React.Component {
           </div>
           <div className="col-xs-12 col-md-8">
             <div className="row">
-              <div className="col-xs-12 col-md-6">
+              <div className="col-xs-12 col-md-12 col-lg-6">
                 <div className="box">
                   <ul className="box-headings js-tabs">
                     <li className="box-heading active">
@@ -1003,7 +1003,7 @@ class PersonalInfo extends React.Component {
                   </ul>
                   <div className="box-content">
                     <div className="box-tab active">
-                      <div className="box-inner box-inner--no-pad">
+                      <div className="box-inner box-inner--no-pad gridScroll">
                         <table className="table table--stripes table--typeb">
                           <thead>
                             <tr>
@@ -1137,7 +1137,7 @@ class PersonalInfo extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-xs-12 col-md-6">
+              <div className="col-xs-12 col-md-12 col-lg-6">
                 <div className="box">
                   <ul className="box-headings js-tabs">
                     <li className="box-heading active">
@@ -1521,7 +1521,7 @@ class PersonalInfo extends React.Component {
                   </ul>
                   <div className="box-content">
                     <div className="box-tab active">
-                      <div className="box-inner box-inner--no-pad">
+                      <div className="box-inner box-inner--no-pad gridScroll">
                         <table className="table table--stripes table--typeb">
                           <thead>
                             <tr>

@@ -21,10 +21,10 @@
 .sidebar-item {
     display: block;
     max-width: 250px;
-    height: 50px;
+    height: 41px;
     padding-left: 25px;
     padding-right: 10px;
-    line-height: 50px;
+    line-height: 41px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -96,4 +96,28 @@
 }
 .sidebar-icon-audit {
     background-image: url(/assets/images/sidebar/sidebar-ico-audit.svg);
+}
+.sidebar-toggler svg {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+	opacity: .8
+}
+.sidebar-toggler:hover svg {
+	right: 15px
+}
+.sidebar-toggler.active svg {
+	-webkit-transform: rotate(0);
+	transform: rotate(0);
+	right: 30px
+}
+.sidebar-hidden .sidebar {
+	width: 75px
+}
+.sidebar-hidden .app {
+	margin-left: 75px
 }

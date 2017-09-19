@@ -85,9 +85,9 @@ class TimeOff extends React.Component {
                                 <div className="time-off-type type-other">
                                   <div className="box-take-action js-box-dropdown">
                                     <strong>Other</strong>
-                                    <span className="box-filter-arrow" />
+                                    <span className="box-filter-arrow" onClick={() => this.toggleElement('take-action')} />
 
-                                    <ul className="take-action box-dropdown-content js-box-dropdown-content">
+                                    <ul className="take-action box-dropdown-content js-box-dropdown-content" id="take-action">
                                       <li><a className="js-time-off-type" data-type="to-unpaid" >Unpaid ill</a></li>
                                     </ul>
 

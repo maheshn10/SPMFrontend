@@ -18,7 +18,7 @@ class Compensation extends React.Component {
     return (
       <div className="container">
         <div className="row row--panel">
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 
@@ -52,7 +52,7 @@ class Compensation extends React.Component {
 
           </div>
 
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 
@@ -86,7 +86,7 @@ class Compensation extends React.Component {
 
           </div>
 
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 
@@ -120,7 +120,7 @@ class Compensation extends React.Component {
 
           </div>
 
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 
@@ -291,7 +291,7 @@ class Compensation extends React.Component {
                           </div>
 
                           <div className="salary-block">
-                            <img src="/assets/sample.png" alt="" />
+                            <img src="../../assets/sample.png" alt="" />
                           </div>
 
                         </div>

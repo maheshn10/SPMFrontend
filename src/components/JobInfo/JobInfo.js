@@ -18,7 +18,7 @@ class JobInfo extends React.Component {
     return (
       <div className="container">
         <div className="row row--panel">
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 
@@ -88,7 +88,7 @@ class JobInfo extends React.Component {
 
           </div>
 
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 
@@ -158,7 +158,7 @@ class JobInfo extends React.Component {
 
           </div>
 
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 
@@ -228,7 +228,7 @@ class JobInfo extends React.Component {
 
           </div>
 
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-12 col-lg-3">
 
             <div className="panel key">
 

@@ -31,7 +31,7 @@ class MyTeam extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 col-md-4">
+          <div className="col-xs-12 col-md-12 col-lg-4">
             <div className="box box--bg">
               <ul className="box-headings">
                 <li className="box-heading active">
@@ -164,7 +164,7 @@ class MyTeam extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-xs-12 col-md-8 worker-col" id="MoreInfo1">
+          <div className="col-xs-12 col-md-12 col-lg-8 worker-col" id="MoreInfo1">
             <div className="box box--bg">
               <ul className="box-headings">
                 <li className="box-heading box-heading--worker active">

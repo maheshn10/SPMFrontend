@@ -175,7 +175,7 @@ a {
 }
 .table {
 	width: 100%;
-	table-layout: fixed;
+	// table-layout: fixed;
 	color: #457db1;
 	font-size: 12px;
 	font-weight: 400;
@@ -298,4 +298,7 @@ a {
 }
 .table-link {
 	color: #175d9d
+}
+.gridScroll {
+	overflow-x: auto;
 }

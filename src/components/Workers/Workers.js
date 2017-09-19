@@ -35,7 +35,7 @@ class Workers extends React.Component {
 
         <div className="row">
 
-          <div className="col-xs-12 col-md-4">
+          <div className="col-xs-12 col-md-12 col-lg-4">
 
             <div className="box box--bg">
 
@@ -188,7 +188,7 @@ class Workers extends React.Component {
             </div>
 
           </div>
-          <div className="col-xs-12 col-md-4 worker-col worker-col-01" id="workerCompare1">
+          <div className="col-xs-12 col-md-12 col-lg-4 worker-col worker-col-01" id="workerCompare1">
 
             <div className="box box--bg">
 
@@ -419,7 +419,7 @@ class Workers extends React.Component {
             </div>
 
           </div>
-          <div className="col-xs-12 col-md-4 worker-col worker-col-02" id="workerCompare2">
+          <div className="col-xs-12 col-md-12 col-lg-4 worker-col worker-col-02" id="workerCompare2">
 
             <div className="box box--bg">
 
