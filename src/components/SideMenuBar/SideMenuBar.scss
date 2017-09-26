@@ -21,10 +21,10 @@
 .sidebar-item {
     display: block;
     max-width: 250px;
-    height: 41px;
+    height: 39px;
     padding-left: 25px;
     padding-right: 10px;
-    line-height: 41px;
+    line-height: 39px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -96,6 +96,10 @@
 }
 .sidebar-icon-audit {
     background-image: url(/assets/images/sidebar/sidebar-ico-audit.svg);
+}
+.sidebar-icon-comapny {
+    background-image: url(/assets/images/sidebar/sidebar-logo-company.svg);
+    background-size: 100%;
 }
 .sidebar-toggler svg {
 	width: 20px;

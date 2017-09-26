@@ -23,6 +23,12 @@ class SideMenuBar extends React.Component {
               </Link>
             </li>
             <li>
+              <Link className="transition sidebar-item " to="CompanyInfo">
+                <div className="sidebar-item-icon sidebar-icon-comapny" />
+                <span className="sidebar-title">CompanyInformation</span>
+              </Link>
+            </li>
+            <li>
               <Link className="transition sidebar-item " to="PersonalInfo">
                 <div className="sidebar-item-icon sidebar-icon-personal-information" />
                 <span className="sidebar-title">{this.props.translate('PersonalInformation')}</span>
