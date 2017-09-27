@@ -84,6 +84,14 @@ class Layout extends React.Component {
                       Hi.. I am good..!
                     </Col>
                     <br className="spacer" />
+                    <Col lg={10} md={10} sm={10} className="outChatBubble">
+                      Hello How are you..!
+                    </Col>
+                    <br className="spacer" />
+                    <Col lg={10} md={10} sm={10} className="inChatBubble">
+                      Hi.. I am good..!
+                    </Col>
+                    <br className="spacer" />
                   </div>
                   <div className="chatTextboxWrap">
                     <input type="text" name="" placeholder="Your Message" />
