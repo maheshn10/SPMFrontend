@@ -55,7 +55,7 @@ class NavBar extends React.Component {
         </div>
         <ul className="navbar-actions">
           <li>
-            <a className="navbar-action" title="Chat" onClick={() => this.openChat()}>
+            <a className="navbar-action" title="Chatbot" onClick={() => this.openChat()}>
               <div className="navbar-icon navbar-icon-chat">
                 <span className="badge badge--nav">1</span>
               </div>

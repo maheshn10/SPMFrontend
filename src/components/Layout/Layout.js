@@ -68,27 +68,27 @@ class Layout extends React.Component {
                     </div>
                   </div>
                   <div className="chatboxContent" id="chatboxContent">
-                    <Col lg={10} md={10} sm={10} className="outChatBubble">
+                    <Col lg={11} md={11} sm={11} className="outChatBubble">
                       Hello How are you..!
                     </Col>
                     <br className="spacer" />
-                    <Col lg={10} md={10} sm={10} className="inChatBubble">
+                    <Col lg={11} md={11} sm={11} className="inChatBubble">
                       Hi.. I am good..!
                     </Col>
                     <br className="spacer" />
-                    <Col lg={10} md={10} sm={10} className="outChatBubble">
+                    <Col lg={11} md={11} sm={11} className="outChatBubble">
                       Hello How are you..!
                     </Col>
                     <br className="spacer" />
-                    <Col lg={10} md={10} sm={10} className="inChatBubble">
+                    <Col lg={11} md={11} sm={11} className="inChatBubble">
                       Hi.. I am good..!
                     </Col>
                     <br className="spacer" />
-                    <Col lg={10} md={10} sm={10} className="outChatBubble">
+                    <Col lg={11} md={11} sm={11} className="outChatBubble">
                       Hello How are you..!
                     </Col>
                     <br className="spacer" />
-                    <Col lg={10} md={10} sm={10} className="inChatBubble">
+                    <Col lg={11} md={11} sm={11} className="inChatBubble">
                       Hi.. I am good..!
                     </Col>
                     <br className="spacer" />

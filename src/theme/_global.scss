@@ -379,7 +379,7 @@ a {
 }
 
 .ChatBox {
-	width: 250px;
+	width: 270px;
 	position: fixed;
 	right: 10px;
 	bottom: 0px;
@@ -462,6 +462,7 @@ a {
 	background: #ffffff;
 	padding: 10px;
 	border-bottom: 1px solid #F39638;
+	border-right: 1px solid #F39638;
 	margin-bottom: 15px;
 	color: #175d9d;
 	float: right;
@@ -470,6 +471,7 @@ a {
 	background: #E6EEF6;
 	padding: 10px;
 	border-bottom: 1px solid #8FB1D0;
+	border-left: 1px solid #8FB1D0;
 	margin-bottom: 0;
 	color: #175d9d;
 }
