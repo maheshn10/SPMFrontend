@@ -52,7 +52,7 @@ class Layout extends React.Component {
                       <img src="/assets/images/icons/ico-comments.svg" alt="" />
                     </Col>
                     <Col xs={9} md={9} className="no-padding">
-                      <h1>Name</h1>
+                      <h1>Chatbot</h1>
                     </Col>
                     <div className="minimizeButton" onClick={() => this.minimizeChat()}>
                       <img src="/assets/images/icons/icon-remove.svg" alt="" />
