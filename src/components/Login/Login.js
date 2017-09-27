@@ -3,7 +3,9 @@
  * @author Mahesh
  */
 import React from 'react';
+import { connect } from 'react-redux';
 import './Login.scss';
+import { userLogin } from '../../actions/LoginAction';
 
 class Login extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class Login extends React.Component {
     this.classElement = this.classElement.bind(this);
     this.userLogin = this.userLogin.bind(this);
     this.hradminLogin = this.hradminLogin.bind(this);
+    this.sendCredentials = this.sendCredentials.bind(this);
   }
   userLogin(elementID) {
     const x = document.getElementById(elementID);
@@ -43,6 +46,16 @@ class Login extends React.Component {
     }
 
     // x.classList.className += ' active';
+  }
+  sendCredentials() {
+    // if (!this.mail.value || !this.password.value) {
+    //   alert('Kindly enter both UserName and Password');
+    // } else {
+    const creds = { username: 'maheshn10@gmail.com', password: 'Test123$' };
+    this.props.dispatch(userLogin(creds));
+    this.mail.value = '';
+    this.password.value = '';
+    // }
   }
   render() {
     return (
@@ -116,7 +129,7 @@ class Login extends React.Component {
                     <input
                       type="submit"
                       value="Log in"
-                      className="log-in-submit"
+                      className="log-in-submit" onClick={() => this.sendCredentials()}
                     />
 
                   </div>
@@ -132,6 +145,7 @@ class Login extends React.Component {
                         id="user-email"
                         className="log-in-input"
                         placeholder="name@mail.com"
+                        ref={(input) => { this.mail = input; }}
                       />
                     </div>
 
@@ -143,6 +157,7 @@ class Login extends React.Component {
                         type="password"
                         id="user-password"
                         className="log-in-input"
+                        ref={(input) => { this.password = input; }}
                       />
                     </div>
 
@@ -153,7 +168,7 @@ class Login extends React.Component {
                     <input
                       type="submit"
                       value="Log in to HR panel"
-                      className="log-in-submit"
+                      className="log-in-submit" onClick={() => this.sendCredentials()}
                     />
 
                   </div>
@@ -167,4 +182,9 @@ class Login extends React.Component {
     );
   }
 }
-export default Login;
+
+function mapStateToProps(state) {
+  return { About: state.about, TC: state.TC };
+}
+
+export default connect(mapStateToProps)(Login);
