@@ -339,6 +339,11 @@ ol, ul {
 	background-repeat: no-repeat;
 	background-position: 50%;
 }
+.navbar-icon-chat {
+    background-image: url(/assets/images/icons/ico-comments.svg);
+    background-size: 100%;
+    height: 25px;
+}
 .navbar-icon-calendar {
 	background-image: url(/assets/images/icons/ico-calendar.svg);
 }

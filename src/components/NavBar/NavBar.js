@@ -14,6 +14,7 @@ class NavBar extends React.Component {
     super(props);
     this.toggleLanguageDropdown = this.toggleLanguageDropdown.bind(this);
     this.setLanguage = this.setLanguage.bind(this);
+    this.openChat = this.openChat.bind(this);
   }
 
   setLanguage(lang) {
@@ -25,8 +26,10 @@ class NavBar extends React.Component {
     const x = document.getElementById(elementID);
     x.classList.toggle('active');
   }
-
-
+  openChat() {
+    const x = document.getElementById('chatBox');
+    x.style.display = 'block';
+  }
   render() {
     return (
       <div className="navbar">
@@ -51,6 +54,13 @@ class NavBar extends React.Component {
           </form>
         </div>
         <ul className="navbar-actions">
+          <li>
+            <a className="navbar-action" title="Chat" onClick={() => this.openChat()}>
+              <div className="navbar-icon navbar-icon-chat">
+                <span className="badge badge--nav">1</span>
+              </div>
+            </a>
+          </li>
           <li>
             <a
               className="navbar-action languageNav"

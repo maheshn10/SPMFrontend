@@ -1,30 +1,39 @@
 a {
 	cursor: pointer;
 }
+
 .no-padding {
-    padding: 0px;
+	padding: 0px;
 }
+
 .padding-right {
-    padding-right: 15px;
+	padding-right: 15px;
 }
+
 .padding-left {
-    padding-left: 15px;
+	padding-left: 15px;
 }
+
 .padding-top {
-    padding-top: 15px;
+	padding-top: 15px;
 }
+
 .padding-bottom {
-    padding-bottom: 15px;
+	padding-bottom: 15px;
 }
+
 .box-tab {
 	display: none
 }
+
 .box-tab.active {
 	display: block
 }
+
 .toggler {
 	position: relative
 }
+
 .toggler-bar {
 	padding: 12px 25px;
 	background-color: #f4f7fa;
@@ -35,35 +44,44 @@ a {
 	display: flex;
 	cursor: pointer
 }
+
 .toggler-bar--no-top {
 	border-top: none
 }
+
 .toggler-title {
 	font-size: 12px;
 	font-weight: 600;
 	color: #175d9d;
 	margin-right: auto
 }
+
 .toggler-bar .box-filter-arrow {
 	margin-top: 4px
 }
+
 .toggler-content {
 	display: none
 }
+
 .toggler-content-inner {
 	padding-top: 15px;
 	padding-bottom: 15px
 }
+
 .toggler-content-inner--nopad {
 	padding: 0
 }
+
 .toggler.active .box-filter-arrow {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg)
 }
+
 .toggler.active .toggler-content {
 	display: block
 }
+
 .toggler-dropdown {
 	position: absolute;
 	top: 6px;
@@ -75,19 +93,23 @@ a {
 	-ms-flex-align: center;
 	align-items: center
 }
+
 .toggler-dropdown select {
 	width: 100px
 }
+
 .toggler-dropdown label {
 	font-size: 11px;
 	color: #175d9d;
 	font-weight: 600;
 	width: 130px
 }
+
 .salary-block {
 	text-align: center;
 	background-color: #f4f7fa
 }
+
 .custom-select {
 	width: 100%;
 	border: 1px solid #b9cee2;
@@ -98,35 +120,43 @@ a {
 	padding-right: 20px;
 	height: auto;
 }
+
 .box {
-	-webkit-box-shadow: 0 0 20px rgba(23,93,157,.3);
-	box-shadow: 0 0 20px rgba(23,93,157,.3);
+	-webkit-box-shadow: 0 0 20px rgba(23, 93, 157, .3);
+	box-shadow: 0 0 20px rgba(23, 93, 157, .3);
 	margin-bottom: 25px
 }
-.box, .box--bg {
+
+.box,
+.box--bg {
 	background-color: #e6eef6
 }
+
 .box:after {
 	content: "";
 	display: table;
 	clear: both
 }
+
 .box-heading.active {
-    background-color: #175d9d;
-    color: #fff;
+	background-color: #175d9d;
+	color: #fff;
 }
+
 @media (max-width:1400px) {
-    .box-title {
-        font-size: 12px
-    }
-    .box-icon {
-        width: 20px;
-        height: 20px
-    }
+	.box-title {
+		font-size: 12px
+	}
+	.box-icon {
+		width: 20px;
+		height: 20px
+	}
 }
+
 .cls-1 {
 	fill: #fff;
 }
+
 .box-actions {
 	margin-top: 9px;
 	margin-left: auto;
@@ -137,17 +167,20 @@ a {
 	font-size: 10px;
 	position: relative;
 }
+
 .box-actions svg {
 	margin-top: -6px;
 	width: 20px;
 	height: 20px;
 }
+
 .box-actions a {
 	padding-left: 10px;
 	color: #fff;
 	font-size: 10px;
 	text-decoration: none;
 }
+
 .box-actions:before {
 	display: block;
 	position: absolute;
@@ -158,52 +191,63 @@ a {
 	background-color: #fff;
 	top: -19px;
 }
+
 .box-actions a:hover {
 	text-decoration: underline !important;
 }
+
 .box-actions .box-take-action {
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-top: -2px;
 	color: #fff;
 }
+
 .box-actions .take-action a {
 	font-size: 14px;
 }
+
 .box-actions .take-action a:hover {
 	text-decoration: none;
 }
+
 .table {
-	width: 100%;
-	// table-layout: fixed;
+	width: 100%; // table-layout: fixed;
 	color: #457db1;
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 1.6
 }
+
 .table td {
 	padding-top: 3px;
 	padding-bottom: 3px;
 	overflow: hidden;
 	text-overflow: ellipsis
 }
+
 .table tr td:first-of-type {
 	padding-left: 30px
 }
+
 .table tr td:last-of-type {
 	padding-right: 30px
 }
+
 .table-label {
 	font-weight: 600
 }
+
 .table-align {
 	text-align: right;
 	padding-right: 15px;
 	width: 180px
 }
+
 .table-middle td {
 	width: 50%
 }
+
 .table-additional-info {
 	font-size: 12px;
 	color: #175d9d;
@@ -213,9 +257,11 @@ a {
 	display: -ms-flexbox;
 	display: flex
 }
+
 .table-additional-info-ico {
 	margin-right: 5px
 }
+
 .table-additional-info-ico svg {
 	width: 15px;
 	height: 10px
@@ -224,6 +270,7 @@ a {
 .table--stripes tr:nth-child(odd) td {
 	background-color: #f4f7fa
 }
+
 .table-compensation {
 	width: 90%;
 	margin: 20px auto;
@@ -232,73 +279,220 @@ a {
 	color: #175d9d;
 	text-align: left
 }
+
 .table-compensation th {
 	font-weight: 700;
 	text-transform: uppercase
 }
+
 .table-compensation {
 	border-collapse: collapse
 }
+
 .table-compensation strong {
 	font-weight: 700;
 	text-transform: uppercase
 }
-.table-compensation td, .table-compensation th {
+
+.table-compensation td,
+.table-compensation th {
 	padding: 10px 5px;
 	border: 1px solid #c4d6e7
 }
-.table-compensation tr td:first-child, .table-compensation tr th:first-child {
+
+.table-compensation tr td:first-child,
+.table-compensation tr th:first-child {
 	width: 130px
 }
+
 .table-compensation tr:first-child th {
 	border-top: 0
 }
+
 .table-compensation tr:last-child td {
 	border-bottom: 0
 }
-.table-compensation tr td:first-child, .table-compensation tr th:first-child {
+
+.table-compensation tr td:first-child,
+.table-compensation tr th:first-child {
 	border-left: 0
 }
-.table-compensation tr td:last-child, .table-compensation tr th:last-child {
+
+.table-compensation tr td:last-child,
+.table-compensation tr th:last-child {
 	border-right: 0
 }
+
 .table--typeb {
 	border-collapse: collapse;
 	border-spacing: 0
 }
+
 .table--typeb tr td:first-of-type {
 	padding-left: 6px
 }
+
 .table--typeb th {
 	font-weight: 700;
 	background-color: #f4f7fa;
 	text-align: left
 }
-.table--typeb td, .table--typeb th {
+
+.table--typeb td,
+.table--typeb th {
 	border: 1px solid #d3e0ec;
 	padding: 7px
 }
-.table--typeb td:first-of-type, .table--typeb th:first-of-type {
+
+.table--typeb td:first-of-type,
+.table--typeb th:first-of-type {
 	border-left: none
 }
-.table--typeb td:last-of-type, .table--typeb th:last-of-type {
+
+.table--typeb td:last-of-type,
+.table--typeb th:last-of-type {
 	border-right: none
 }
+
 .table--typeb th {
 	border-top: none
 }
+
 .table--stripes.table--typeb tr td {
 	background-color: #e6eef6
 }
+
 .table--stripes.table--typeb tr:nth-child(2n) td {
 	background-color: #f4f7fa
 }
+
 .table--side-left {
 	border-left: 1px solid #bfd2e5
 }
+
 .table-link {
-	color: #175d9d
+	color: #175d9d;
 }
+
 .gridScroll {
 	overflow-x: auto;
+}
+
+.ChatBox {
+	width: 250px;
+	position: fixed;
+	right: 10px;
+	bottom: 0px;
+	min-height: 39px;
+	box-shadow: 0 0 20px rgba(23, 93, 157, 0.3);
+	background-color: #f4f7fa;
+	z-index: 999;
+	padding: 0px;
+	display: none;
+}
+
+.ChatBox .js-box-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 99;
+}
+
+.chatHeader .minimizeButton {
+	position: absolute;
+    right: 35px;
+    top: 0px;
+    width: 17px;
+    padding: 10px 0px;
+    cursor: pointer;
+	line-height: 15px;
+	z-index: 99;
+}
+
+.chatHeader .minimizeButton img {
+	width: 100%;
+}
+
+.ChatBox .box-icon {
+	width: 13px;
+}
+
+.chatboxContent {
+	width: 100%;
+	position: relative;
+	min-height: 100px;
+	padding: 0 10px;
+	margin-top: 50px;
+	max-height: 250px;
+	overflow-y: auto;
+}
+
+.chatTextboxWrap {
+	width: 100%;
+	height: auto;
+	position: relative;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	padding:5px 3px;
+	background: #fff;
+}
+
+.chatTextboxWrap input {
+	border: none;
+	font-size: 14px;
+	color: #175d9d;
+	background-color: transparent;
+	padding: 3px 10px;
+	width: 100%;
+	height: 30px;
+}
+.chat-avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 10px rgba(23, 93, 157, 0.3);
+    box-shadow: 0 0 10px rgba(23, 93, 157, 0.3);
+}
+.ChatBox h1 {
+	font-weight: bold;
+}
+.outChatBubble {
+	background: #ffffff;
+	padding: 10px;
+	border-bottom: 1px solid #F39638;
+	margin-bottom: 15px;
+	color: #175d9d;
+	float: right;
+}
+.inChatBubble {
+	background: #E6EEF6;
+	padding: 10px;
+	border-bottom: 1px solid #8FB1D0;
+	margin-bottom: 15px;
+	color: #175d9d;
+}
+.spacer {
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+}
+.chatHeader {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: #175d9d;
+    color: #fff;
+	padding: 10px;
+	z-index: 999;
+}
+.display {
+	display: none;
+}
+.chatIcon img {
+	width: 20px;
 }
