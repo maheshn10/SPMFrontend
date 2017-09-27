@@ -3,11 +3,7 @@ import moment from 'moment';
 import { EmployeeType } from '../actions/ActionTypes';
 
 const DEFAULT_STATE = {
-  currentEmployee: [{
-    hireDate: new Date(),
-    company: '',
-    eventReason: ''
-  }]
+  currentEmployee: [{ identify: { hireDate: new Date(), company: '', eventReason: '' }, personalInformation: { biographicalInformation: { DOB: new Date(), CountryOfBirth: '', DateOfDeath: new Date() }, personalInformation: { DOB: new Date(), CountryOfBirth: '', DateOfDeath: new Date() } } }]
 };
 
 const modifyHireDate = (state, action) => {
