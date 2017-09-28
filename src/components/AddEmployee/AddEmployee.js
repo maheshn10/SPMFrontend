@@ -1,11 +1,33 @@
 /**
- * @file Terminate Component.
- * @author Mahesh
+ * @file Add Employee Component.
+ * @author Sunny
  */
 import React from 'react';
+import { connect } from 'react-redux';
+import moment from 'moment';
+// import { Link } from 'react-router';
+// import { getTranslate, getActiveLanguage } from 'react-localize-redux';
+import ReactSuperSelect from 'react-super-select';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 import './AddEmployee.scss';
+import './AddEmployeeExtra.scss';
+import {
+  modifyHireDate,
+  getCurrentEmployee,
+  updateCompany,
+  updateEventReason,
+  modifyDOB,
+  updateCountryOfBirth,
+  modifyDateOfDeath,
+  modifyCertificateStartDate,
+  modifyCertificateEndDate } from '../../actions/EmployeeActions';
 
 class AddEmployee extends React.Component {
+  static get contextTypes() {
+    return {
+      router: React.PropTypes.object.isRequired
+    };
+  }
   constructor(props) {
     super(props);
     this.toggleElement = this.toggleElement.bind(this);
@@ -13,51 +35,165 @@ class AddEmployee extends React.Component {
     this.nextStep = this.nextStep.bind(this);
     this.prevStep = this.prevStep.bind(this);
     this.state = {
-      breadcrumbPosition: 1
+      breadcrumbPosition: 1,
+      modifyHireDateErrorText: '',
+      modifyCompanyErrorText: '',
+      modifyEventReasonErrorText: '',
+      modifyDOBErrorText: '',
+      modifyCountryOfBirthText: '',
+      modifyDateOfDeathErrorText: '',
+      modifyCertificateStartDateErrorText: '',
+      modifyCertificateEndDateErrorText: '',
+      currentEmployee: [{ identify: { hireDate: new Date(), company: '', eventReason: '' }, personalInformation: { biographicalInformation: { DOB: new Date(), CountryOfBirth: '', DateOfDeath: new Date() }, personalInformation: { DOB: new Date(), CountryOfBirth: '', DateOfDeath: new Date() } } }]
     };
+  }
+  componentWillMount() {
+    this.props.dispatch(getCurrentEmployee());
+  }
+
+  setCompany = (value) => {
+    console.log(value, 'value');
+    if (typeof value !== 'undefined') {
+      this.props.dispatch(
+          updateCompany(
+            value.companyId
+          )
+        );
+      this.setState({ modifyCompanyErrorText: '' });
+    }
+  }
+
+  setEventReason = (value) => {
+    if (typeof value !== 'undefined') {
+      this.props.dispatch(
+          updateEventReason(
+            value.eventReasonId
+          )
+        );
+      this.setState({ modifyEventReasonErrorText: '' });
+    }
+  }
+
+  setCountryOfBirth = (value) => {
+    console.log(value, 'value');
+    if (typeof value !== 'undefined') {
+      this.props.dispatch(
+          updateCountryOfBirth(
+            value.CountryOfBirthId
+          )
+        );
+      this.setState({ modifyCountryOfBirthText: '' });
+    }
+  }
+
+  modifyDOB = (date) => {
+    this.props.dispatch(
+        modifyDOB(
+          date
+        )
+      );
+  }
+  modifyHireDate = (date) => {
+    this.props.dispatch(
+        modifyHireDate(
+          date
+        )
+      );
   }
   toggleElement(elementID) {
     const x = document.getElementById(elementID);
     x.classList.toggle('active');
   }
+  modifyDateOfDeath = (date) => {
+    this.props.dispatch(
+        modifyDateOfDeath(
+          date
+        )
+      );
+  }
+  modifyCertificateStartDate = (date) => {
+    this.props.dispatch(
+        modifyCertificateStartDate(
+          date
+        )
+      );
+  }
+  modifyCertificateEndDate = (date) => {
+    this.props.dispatch(
+        modifyCertificateEndDate(
+          date
+        )
+      );
+  }
   nextStep() {
     switch (this.state.breadcrumbPosition) {
       case 1: {
-        const p = document.getElementById('identify');
-        const n = document.getElementById('personalInfo');
-        document.getElementById('step2').style.display = 'block';
-        document.getElementById('prevButton').style.display = 'block';
-        document.getElementById('step1').style.display = 'none';
-        if (p.classList.contains('active')) {
-          p.classList.remove('active');
-          p.classList.add('done');
+        console.log(this.props, 'PROPS');
+        if (!this.props.currentEmployee) {
+          /* if (this.props.currentEmployee[0].identify.hireDate !== '') {
+            this.setState({ modifyHireDateErrorText: 'Hire Date cannot be Empty' });
+          }
+          if (this.props.currentEmployee[0].identify.company !== '') {
+            this.setState({ modifyCompanyErrorText: 'Company cannot be Empty' });
+          }
+          if (this.props.currentEmployee[0].identify.eventReason !== '') {
+            this.setState({ modifyEventReasonErrorText: 'Event Reason cannot be Empty' });
+          } */
+          setTimeout(() => {
+            if (this.state.modifyHireDateErrorText === '' && this.state.modifyEventReasonErrorText === '' && this.state.modifyCompanyErrorText === '') {
+              const p = document.getElementById('identify');
+              const n = document.getElementById('personalInfo');
+              document.getElementById('step2').style.display = 'block';
+              document.getElementById('prevButton').style.display = 'block';
+              document.getElementById('step1').style.display = 'none';
+              if (p.classList.contains('active')) {
+                p.classList.remove('active');
+                p.classList.add('done');
+              }
+              if (n.classList.contains('active')) {
+                n.classList.remove('active');
+              } else {
+                n.classList.add('active');
+              }
+              this.setState({ breadcrumbPosition: 2 });
+            }
+          }, 50);
         }
-        if (n.classList.contains('active')) {
-          n.classList.remove('active');
-        } else {
-          n.classList.add('active');
-        }
-        this.setState({ breadcrumbPosition: 2 });
         break;
       }
 
       case 2: {
-        const pi = document.getElementById('personalInfo');
-        const ji = document.getElementById('jobInfo');
-        document.getElementById('step3').style.display = 'block';
-        document.getElementById('prevButton').style.display = 'block';
-        document.getElementById('step1').style.display = 'none';
-        document.getElementById('step2').style.display = 'none';
-        if (pi.classList.contains('active')) {
-          pi.classList.remove('active');
-          pi.classList.add('done');
+        if (this.props.currentEmployee) {
+          if (this.props.currentEmployee[0].personalInformation.biographicalInformation.DOB !== '') {
+            this.setState({ modifyDOBErrorText: 'Date Of Birth cannot be Empty' });
+          }
+          if (this.props.currentEmployee[0].personalInformation.biographicalInformation.CountryOfBirth !== '') {
+            this.setState({ modifyCountryOfBirthText: 'Country Of Birth cannot be Empty' });
+          }
+          if (this.props.currentEmployee[0].personalInformation.biographicalInformation.DateOfDeath !== '') {
+            this.setState({ modifyDateOfDeathErrorText: 'Date Of Death cannot be Empty' });
+          }
+          setTimeout(() => {
+            if (this.state.modifyDOBErrorText === '' && this.state.modifyCountryOfBirthText === '' && this.state.modifyDateOfDeathErrorText === '') {
+              const pi = document.getElementById('personalInfo');
+              const ji = document.getElementById('jobInfo');
+              document.getElementById('step3').style.display = 'block';
+              document.getElementById('prevButton').style.display = 'block';
+              document.getElementById('step1').style.display = 'none';
+              document.getElementById('step2').style.display = 'none';
+              if (pi.classList.contains('active')) {
+                pi.classList.remove('active');
+                pi.classList.add('done');
+              }
+              if (ji.classList.contains('active')) {
+                ji.classList.remove('active');
+              } else {
+                ji.classList.add('active');
+              }
+              this.setState({ breadcrumbPosition: 3 });
+            }
+          }, 50);
         }
-        if (ji.classList.contains('active')) {
-          ji.classList.remove('active');
-        } else {
-          ji.classList.add('active');
-        }
-        this.setState({ breadcrumbPosition: 3 });
         break;
       }
 
@@ -94,7 +230,7 @@ class AddEmployee extends React.Component {
         document.getElementById('step3').style.display = 'none';
         document.getElementById('step4').style.display = 'none';
         i.classList.remove('done');
-        this.setState({ breadcrumbPosition: 1 });
+        // this.setState({ breadcrumbPosition: 1 });
         break;
       }
     }
@@ -167,6 +303,41 @@ class AddEmployee extends React.Component {
     }
   }
   render() {
+    /* const hireDateDay = (this.props.currentEmployee[0].identify.hireDate)
+      ? this.props.currentEmployee[0].identify.hireDate
+      : new Date(); */
+    const hireDateDay = new Date();
+    const formattedDay = (hireDateDay)
+      ? moment(hireDateDay).format('DD-MMM-YYYY')
+      : '';
+    /* const DOBDay = (this.props.currentEmployee[0].personalInformation.biographicalInformation.DOB)
+      ? this.props.currentEmployee[0].personalInformation.biographicalInformation.DOB
+      : new Date(); */
+    const DOBDay = new Date();
+    const formattedDOB = (DOBDay)
+      ? moment(DOBDay).format('DD-MMM-YYYY')
+      : '';
+    /* const DateOfDeathDay = (this.props.currentEmployee[0].personalInformation.biographicalInformation.DateOfDeath)
+      ? this.props.currentEmployee[0].personalInformation.biographicalInformation.DateOfDeath
+      : new Date(); */
+    const DateOfDeathDay = new Date();
+    const formattedDateOfDeath = (DateOfDeathDay)
+      ? moment(DateOfDeathDay).format('DD-MMM-YYYY')
+      : '';
+    /* const CertificateStartDateDay = (this.props.currentEmployee[0].personalInformation.biographicalInformation.CertificateStartDate)
+      ? this.props.currentEmployee[0].personalInformation.biographicalInformation.CertificateStartDate
+      : new Date(); */
+    const CertificateStartDateDay = new Date();
+    const formattedCertificateStartDate = (CertificateStartDateDay)
+      ? moment(CertificateStartDateDay).format('DD-MMM-YYYY')
+      : '';
+    /* const CertificateEndDateDay = (this.props.currentEmployee[0].personalInformation.biographicalInformation.CertificateEndDate)
+      ? this.props.currentEmployee[0].personalInformation.biographicalInformation.CertificateEndDate
+      : new Date(); */
+    const CertificateEndDateDay = new Date();
+    const formattedCertificateEndDate = (CertificateEndDateDay)
+      ? moment(CertificateEndDateDay).format('DD-MMM-YYYY')
+      : '';
     return (
       <div className="container">
         <div className="row">
@@ -250,36 +421,44 @@ class AddEmployee extends React.Component {
                       <div className="fields-inline panel">
                         <div className="form-field">
                           <label htmlFor="addemp-hire-date">* Hire Date</label>
-                          <input
-                            type="text"
-                            className="entry-input js-datepicker"
-                            name="addemp-hire-date"
-                            id="addemp-hire-date"
+                          <DayPickerInput
+                            placeholder="MM/DD/YYYY"
+                            onDayChange={this.modifyHireDate}
+                            value={formattedDay}
                           />
+                          <p className="danger">
+                            {this.state.modifyHireDateErrorText !== '' ? this.state.modifyHireDateErrorText : ''}
+                          </p>
                         </div>
                         <div className="form-field">
                           <label htmlFor="addemp-company">* Company</label>
-                          <select id="addemp-company" className="custom-select">
-                            <option value="addemp-company-1">
-                              No Selection
-                            </option>
-                            <option value="addemp-company-2">
-                              Company 001
-                            </option>
-                            <option value="addemp-company-3">
-                              Company 002
-                            </option>
-                          </select>
+                          <ReactSuperSelect
+                            className="custom-select"
+                            placeholder="Select Company"
+                            // dataSource={this.props.currentEmployee[0].companyList}
+                            optionValueKey="companyId"
+                            optionLabelKey="companyName"
+                            clearable={false}
+                            onChange={this.setCompany}
+                          />
+                          <p className="danger">
+                            {this.state.modifyCompanyErrorText !== '' ? this.state.modifyCompanyErrorText : ''}
+                          </p>
                         </div>
                         <div className="form-field">
                           <label htmlFor="addemp-reason">* Event Reason</label>
-                          <select id="addemp-reason" className="custom-select">
-                            <option value="addemp-reason-1">
-                              No Selection
-                            </option>
-                            <option value="addemp-reason-2">Reason 001</option>
-                            <option value="addemp-reason-3">Reason 002</option>
-                          </select>
+                          <ReactSuperSelect
+                            className="custom-select"
+                            placeholder="Select Event Reason"
+                            // dataSource={this.props.currentEmployee[0].eventReasonList}
+                            optionValueKey="eventReasonId"
+                            optionLabelKey="eventReasonName"
+                            clearable={false}
+                            onChange={this.setEventReason}
+                          />
+                          <p className="danger">
+                            {this.state.modifyEventReasonErrorText !== '' ? this.state.modifyEventReasonErrorText : ''}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -413,10 +592,15 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <input
-                                            type="text"
+                                          <DayPickerInput
                                             className="js-datepicker entry-input"
+                                            placeholder="MM/DD/YYYY"
+                                            onDayChange={this.modifyDOB}
+                                            value={formattedDOB}
                                           />
+                                          <p className="danger">
+                                            {this.state.modifyDOBErrorText !== '' ? this.state.modifyDOBErrorText : ''}
+                                          </p>
                                         </td>
                                       </tr>
                                       <tr>
@@ -426,11 +610,18 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <select className="custom-select">
-                                            <option value="v-1">
-                                              Drop-down
-                                            </option>
-                                          </select>
+                                          <ReactSuperSelect
+                                            className="custom-select"
+                                            placeholder="Select Country of Birth"
+                                            // dataSource={this.props.currentEmployee[0].personalInformation.biographicalInformation.countryList}
+                                            optionValueKey="CountryOfBirthId"
+                                            optionLabelKey="CountryOfBirthName"
+                                            clearable={false}
+                                            onChange={this.setCountryOfBirth}
+                                          />
+                                          <p className="danger">
+                                            {this.state.modifyCountryOfBirthText !== '' ? this.state.modifyCountryOfBirthErrorText : ''}
+                                          </p>
                                         </td>
                                       </tr>
                                       <tr>
@@ -440,10 +631,7 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <input
-                                            type="text"
-                                            className="entry-input"
-                                          />
+                                          <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.biographicalInformation.regionOfBirth */ }</p>
                                         </td>
                                       </tr>
                                       <tr>
@@ -453,10 +641,15 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <input
-                                            type="text"
+                                          <DayPickerInput
                                             className="js-datepicker entry-input"
+                                            placeholder="MM/DD/YYYY"
+                                            onDayChange={this.modifyDateOfDeath}
+                                            value={formattedDateOfDeath}
                                           />
+                                          <p className="danger">
+                                            {this.state.modifyDateOfDeathErrorText !== '' ? this.state.modifyDateOfDeathErrorText : ''}
+                                          </p>
                                         </td>
                                       </tr>
                                       <tr>
@@ -466,10 +659,7 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <input
-                                            type="text"
-                                            className="entry-input"
-                                          />
+                                          <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.biographicalInformation.employeeId */ }</p>
                                         </td>
                                       </tr>
                                       <tr>
@@ -479,10 +669,7 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <input
-                                            type="text"
-                                            className="entry-input"
-                                          />
+                                          <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.biographicalInformation.employeeGlobalId */ }</p>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -562,10 +749,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.firstName */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -575,10 +759,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.lastName */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -588,10 +769,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.middleName */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -613,10 +791,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.displayName */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -626,10 +801,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.formalName */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -651,10 +823,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.birthName */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -664,10 +833,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.initials */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -768,10 +934,7 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input"
-                                      />
+                                      <p className="textBoxStyle entry-input">{ /* this.props.currentEmployee[0].personalInformation.personalInformation.challengeStatus */ }</p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -781,10 +944,15 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input js-datepicker"
+                                      <DayPickerInput
+                                        className="js-datepicker entry-input"
+                                        placeholder="MM/DD/YYYY"
+                                        onDayChange={this.modifyCertificateStartDate}
+                                        value={formattedCertificateStartDate}
                                       />
+                                      <p className="danger">
+                                        {this.state.modifyCertificateStartDateErrorText !== '' ? this.state.modifyCertificateStartDateErrorText : ''}
+                                      </p>
                                     </td>
                                   </tr>
                                   <tr>
@@ -794,10 +962,15 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <input
-                                        type="text"
-                                        className="entry-input js-datepicker"
+                                      <DayPickerInput
+                                        className="js-datepicker entry-input"
+                                        placeholder="MM/DD/YYYY"
+                                        onDayChange={this.modifyCertificateEndDate}
+                                        value={formattedCertificateEndDate}
                                       />
+                                      <p className="danger">
+                                        {this.state.modifyCertificateEndDateErrorText !== '' ? this.state.modifyCertificateEndDateErrorText : ''}
+                                      </p>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -3464,4 +3637,9 @@ class AddEmployee extends React.Component {
     );
   }
 }
-export default AddEmployee;
+// export default AddEmployee;
+function mapStateToProps(state) {
+  return { currentEmployee: state.currentEmployee };
+}
+
+export default connect(mapStateToProps)(AddEmployee);
