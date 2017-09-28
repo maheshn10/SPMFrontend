@@ -97,12 +97,14 @@ class Layout extends React.Component {
                     <input type="text" name="" placeholder="Your Message" />
                   </div>
                 </div>
+                {mypath === '/' ? this.props.children :
                 <div className="container">
                   <div className="page-nav">
                     <BreadCrumbs />
                     <Help />
                   </div>
                 </div>
+                }
                 {this.props.children}
               </div>
             </div>
