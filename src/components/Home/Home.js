@@ -13,10 +13,10 @@ class Home extends React.Component {
   render() {
     return (
       <div className="landing-wrapper">
-        <div className="landing-col col-lg-8">
+        <div className="landing-col col-lg-8 col-md-7">
           <DashBoard />
         </div>
-        <div className="landing-col col-lg-4">
+        <div className="landing-col col-lg-4 col-md-5">
           <div className="landing-tab-column">
             <MyFavorite />
             <News />
