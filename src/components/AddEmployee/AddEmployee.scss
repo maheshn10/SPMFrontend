@@ -366,6 +366,10 @@ input[type="text"] {
   margin-top:15px;
 }
 
+.DayPickerInput-OverlayWrapper {
+  position: absolute;
+  z-index: 200000;
+}
 .react-datepicker__tether-element-attached-top .react-datepicker__triangle, .react-datepicker__tether-element-attached-bottom .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,
 .react-datepicker__month-read-view--down-arrow {
   margin-left: -8px;

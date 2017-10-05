@@ -84,11 +84,11 @@ class MyTeam extends React.Component {
                 <div className="box-tab active">
                   <div className="box-inner">
                     <div className="box-nav">
-                      <div action="#" className="box-search">
+                      <div action="#" className="box-search col-lg-8 no-padding">
                         <input type="submit" value="" className="navbar-search-submit" />
                         <input type="text" className="search navbar-search-input" placeholder={this.props.translate('Search')} />
                       </div>
-                      <div className="box-filter">
+                      <div className="box-filter col-lg-4 no-padding">
                         <span className="box-filter-text">
                           {this.props.translate('Filter')}
                           <span className="box-filter-arrow" />

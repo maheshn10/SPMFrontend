@@ -3,8 +3,8 @@ import { EmployeeType } from './ActionType';
 // import config from '../config';
 
 /* const HEADER_CONFIG = {
-  headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' }
-}; */
+ headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' }
+ }; */
 
 export function modifyHireDate(date) {
   console.log('modifyHireDate');
@@ -33,4 +33,8 @@ export function modifyCertificateStartDate(date) {
 }
 export function modifyCertificateEndDate(date) {
   return { type: EmployeeType.MODIFY_CERTIFICATE_END_DATE, date };
+}
+
+export function updateEmployeeData(data) {
+  return { type: EmployeeType.UPDATE_EMPLOYEE_DATA, data };
 }
