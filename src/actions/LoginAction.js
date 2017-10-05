@@ -2,7 +2,7 @@ import axios from 'axios';
 import { LoginType, ErrorType } from './ActionType';
 import { LoginUrl } from './ActionURL';
 import { Configs } from './ActionConfigs';
-import setAuthorizationToken from '../utils/setAuthorizationToken';
+// import setAuthorizationToken from '../utils/setAuthorizationToken';
 import AppConfig from '../config';
 
 export function userLogin(userData) {
@@ -15,7 +15,7 @@ export function userLogin(userData) {
       .then(response => {
         const token = response.data.token;
         localStorage.setItem('jwtToken', token);
-        setAuthorizationToken(token);
+        // setAuthorizationToken(token);
         localStorage.setItem('user', JSON.stringify(response.data.user));
         dispatch({
           type: LoginType.AUTHENTICATE,
