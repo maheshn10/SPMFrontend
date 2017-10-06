@@ -511,3 +511,57 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 .navbar-search input[type="text"] {
 	width: 85%;
 }
+.container {
+	width:100%;
+}
+.box-search input[type="text"] {
+	width: 85%;
+}
+
+/*-----Mediaquery-----*/
+@media only screen and (max-width: 1024px) {
+	.compare-single {
+		padding: 10px 5px;
+	}
+	.compare-avatar {
+		width: 55px;
+		height: 55px;
+		margin-right: 8px;
+	}
+	.compare-more-info {
+		bottom: 28px;
+		font-size: 11px;
+	}
+	.compare-user-name {
+		font-size: 13px;
+	}
+	.compare-user-details {
+		font-size: 11px;
+	}
+	.compare-more-info {
+		right:2px;
+	}
+	.box-actions::before {
+		left: 5px;
+	}
+	.box-title {
+		margin-left: 7px;
+		font-size: 11px;
+	}
+	.box-heading {
+		padding: 10px;
+	}
+	.take-action {
+		padding: 10px 15px;
+		width: 205px;
+	}
+	.box-nav {
+		padding: 10px;
+	}
+	.box-nav input[type="text"] {
+		width: 85%;
+	}
+	.box-filter {
+		margin-top: 3px;
+	}
+}

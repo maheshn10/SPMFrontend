@@ -2,6 +2,11 @@ export const DashboardType = {
   TEST: 'TEST'
 };
 
+export const ChatBotType = {
+  INCHAT: 'INCHAT',
+  OUTCHAT: 'OUTCHAT'
+};
+
 export const LoginType = {
   AUTHENTICATE: 'AUTHENTICATE'
 };
