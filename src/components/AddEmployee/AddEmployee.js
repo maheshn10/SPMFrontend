@@ -136,6 +136,9 @@ class AddEmployee extends React.Component {
         )
     );
   }
+  save() {
+    console.log('saving the employee data');
+  }
   nextStep() {
     switch (this.state.breadcrumbPosition) {
       case 1: {
@@ -427,6 +430,7 @@ class AddEmployee extends React.Component {
                           className="step-save"
                           id="saveButton"
                           data-direction="finish"
+                          onClick={() => this.save()}
                         >
                           Save
                         </button>
