@@ -24,7 +24,7 @@ import {
     modifyCertificateEndDate,
     updateEmployeeData } from '../../actions/EmployeeActions';
 
-import { createEmployee } from '../../services/Employee.service';
+import { updateNewEmployee, findNewEmployee } from '../../services/Employee.service';
 
 class AddEmployee extends React.Component {
   static get contextTypes() {
@@ -54,6 +54,15 @@ class AddEmployee extends React.Component {
   }
   componentWillMount() {
     this.props.dispatch(getCurrentEmployee());
+    /*if (this.props.newEmployee) {
+      updateNewEmployee({ employee: this.props.newEmployee }, true, this.props.dispatch);
+    }*/
+  }
+
+  componentDidMount() {
+    if (this.props.newEmployee) {
+      findNewEmployee({ employee: this.props.newEmployee }, true, this.props.dispatch);
+    }
   }
 
   setCompany = (value) => {
@@ -141,7 +150,7 @@ class AddEmployee extends React.Component {
   save() {
     console.log('saving the employee data');
     console.log({ employee: this.props.newEmployee });
-    createEmployee({ employee: this.props.newEmployee });
+    updateNewEmployee({ employee: this.props.newEmployee }, false, this.props.dispatch);
   }
   nextStep() {
     switch (this.state.breadcrumbPosition) {
@@ -185,7 +194,7 @@ class AddEmployee extends React.Component {
           if (this.props.newEmployee.personalInformation.biographicalInformation.DOB === '') {
             this.setState({ modifyDOBErrorText: 'Date Of Birth cannot be Empty' });
           }
-          if (this.props.newEmployee.personalInformation.biographicalInformation.CountryOfBirth !== '') {
+          if (this.props.newEmployee.personalInformation.biographicalInformation.CountryOfBirth === '') {
             this.setState({ modifyCountryOfBirthText: 'Country Of Birth cannot be Empty' });
           }
           if (this.props.newEmployee.personalInformation.biographicalInformation.DateOfDeath === '') {
@@ -369,6 +378,20 @@ class AddEmployee extends React.Component {
         <div className="row">
           <div className="col-xs-12">
             <div id="steps-add-employee" className="steps-wrapper">
+              <div >
+                <button
+                  id="saveButtonTop"
+                  onClick={() => this.save()}
+                >
+                  Save
+                </button>
+                <button
+                  id="resetButtonTop"
+                  onClick={() => this.save()}
+                >
+                  Reset
+                </button>
+              </div>
               <div className="steps">
                 <div className="step-app">
                   <div className="steps-placeholder">
@@ -1225,19 +1248,19 @@ class AddEmployee extends React.Component {
                                 <tbody>
                                   <tr>
                                     <td>
-                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country1.country" value={this.props.newEmployee.personalInformation.nationalIdInformation.country1.country} onChange={this.updateEmployeeData}>
+                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country1.country" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country1.country*/}} onChange={this.updateEmployeeData}>
                                         <option value="v-1">Drop-down</option>
                                         <option value="v-2">Drop-down2</option>
                                       </select>
                                     </td>
                                     <td>
-                                      <input name="personalInformation.nationalIdInformation.country1.nationalIdCardType" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.nationalIdInformation.country1.nationalIdCardType} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.nationalIdInformation.country1.nationalIdCardType" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country1.nationalIdCardType*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <input name="personalInformation.nationalIdInformation.country1.nationalId" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.nationalIdInformation.country1.nationalId} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.nationalIdInformation.country1.nationalId" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country1.nationalId*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country1.isPrimary" value={this.props.newEmployee.personalInformation.nationalIdInformation.country1.isPrimary} onChange={this.updateEmployeeData}>
+                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country1.isPrimary" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country1.isPrimary*/}} onChange={this.updateEmployeeData}>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                       </select>
@@ -1245,19 +1268,19 @@ class AddEmployee extends React.Component {
                                   </tr>
                                   <tr>
                                     <td>
-                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country2.country" value={this.props.newEmployee.personalInformation.nationalIdInformation.country1.country} onChange={this.updateEmployeeData}>
+                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country2.country" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country1.country*/}} onChange={this.updateEmployeeData}>
                                         <option value="v-1">Drop-down</option>
                                         <option value="v-2">Drop-down2</option>
                                       </select>
                                     </td>
                                     <td>
-                                      <input name="personalInformation.nationalIdInformation.country2.nationalIdCardType" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.nationalIdInformation.country2.nationalIdCardType} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.nationalIdInformation.country2.nationalIdCardType" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country2.nationalIdCardType*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <input name="personalInformation.nationalIdInformation.country2.nationalId" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.nationalIdInformation.country2.nationalId} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.nationalIdInformation.country2.nationalId" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country2.nationalId*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country2.isPrimary" value={this.props.newEmployee.personalInformation.nationalIdInformation.country2.isPrimary} onChange={this.updateEmployeeData}>
+                                      <select className="custom-select" name="personalInformation.nationalIdInformation.country2.isPrimary" value={{/*this.props.newEmployee.personalInformation.nationalIdInformation.country2.isPrimary*/}} onChange={this.updateEmployeeData}>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                       </select>
@@ -1687,39 +1710,39 @@ class AddEmployee extends React.Component {
                                 <tbody>
                                   <tr>
                                     <td>
-                                      <select className="custom-select" name="personalInformation.workPermitInformation.permit1.country" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.country} onChange={this.updateEmployeeData}>
+                                      <select className="custom-select" name="personalInformation.workPermitInformation.permit1.country" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.country*/}} onChange={this.updateEmployeeData}>
                                         <option value="v-1">Drop-down</option>
                                       </select>
                                     </td>
                                     <td>
-                                      <input name="personalInformation.workPermitInformation.permit1.documentType" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.documentType} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.documentType" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.documentType*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <input name="personalInformation.workPermitInformation.permit1.documentTitle" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.documentTitle} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.documentTitle" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.documentTitle*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <input name="personalInformation.workPermitInformation.permit1.documentNumber" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.documentNumber} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.documentNumber" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.documentNumber*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td className="text-center">
-                                      <input name="personalInformation.workPermitInformation.permit1.issueDate" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.issueDate} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.issueDate" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.issueDate*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <input name="personalInformation.workPermitInformation.permit1.issuePlace" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.issuePlace} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.issuePlace" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.issuePlace*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <input name="personalInformation.workPermitInformation.permit1.issuingAuthority" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.issuingAuthority} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.issuingAuthority" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.issuingAuthority*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <input name="personalInformation.workPermitInformation.permit1.expirationDate" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.expirationDate} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.expirationDate" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.expirationDate*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                     <td>
-                                      <select className="custom-select" name="personalInformation.workPermitInformation.permit1.validated" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.validated} onChange={this.updateEmployeeData}>
+                                      <select className="custom-select" name="personalInformation.workPermitInformation.permit1.validated" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.validated*/}} onChange={this.updateEmployeeData}>
                                         <option value="v-1">Drop-down</option>
                                         <option value="v-2">Drop-down2</option>
                                       </select>
                                     </td>
                                     <td>
-                                      <input name="personalInformation.workPermitInformation.permit1.attachments" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.workPermitInformation.permit1.attachments} onChange={this.updateEmployeeData} />
+                                      <input name="personalInformation.workPermitInformation.permit1.attachments" className="textBoxStyle entry-input" value={{/*this.props.newEmployee.personalInformation.workPermitInformation.permit1.attachments*/}} onChange={this.updateEmployeeData} />
                                     </td>
                                   </tr>
                                 </tbody>

@@ -22,7 +22,7 @@ const employeeObj = {
     personalInformation: {
       personalInformation: {
         DOB: new Date(),
-        CountryOfBirth: '',
+        CountryOfBirth: 'us',
         DateOfDeath: new Date(),
         firstName: '',
         middleName: '',
@@ -237,11 +237,11 @@ const DEFAULT_STATE = {
 };
 
 const modifyHireDate = (state, action) => {
-  const newCurrentEmployeeState = [];
-  Object.assign(newCurrentEmployeeState, state.currentEmployee);
-  newCurrentEmployeeState[0].identify.hireDate = action.date;
+  const newCurrentEmployeeState = {};
+  Object.assign(newCurrentEmployeeState, state.newEmployee);
+  newCurrentEmployeeState.identify.hireDate = action.date;
   const newState = {};
-  Object.assign(newState, state, { currentEmployee: newCurrentEmployeeState });
+  Object.assign(newState, state, { newEmployee: newCurrentEmployeeState });
   return newState;
 };
 
@@ -279,11 +279,11 @@ const setEventReasonData = (state, action) => {
 };
 
 const modifyDOB = (state, action) => {
-  const newCurrentEmployeeState = [];
-  Object.assign(newCurrentEmployeeState, state.currentEmployee);
-  newCurrentEmployeeState[0].personalInformation.biographicalInformation.DOB = action.date;
+  const newCurrentEmployeeState = {};
+  Object.assign(newCurrentEmployeeState, state.newEmployee);
+  newCurrentEmployeeState.personalInformation.biographicalInformation.DOB = action.date;
   const newState = {};
-  Object.assign(newState, state, { currentEmployee: newCurrentEmployeeState });
+  Object.assign(newState, state, { newEmployee: newCurrentEmployeeState });
   return newState;
 };
 
@@ -347,6 +347,15 @@ const updateData = (state, action) => {
   return newState;
 };
 
+const setNewEmployee = (state, action) => {
+  //const newCurrentEmployeeState = action.payload;
+  //Object.assign(newCurrentEmployeeState, state.newEmployee);
+  //newCurrentEmployeeState[0].company = action.id;
+  const newState = {};
+  Object.assign(newState, state, { newEmployee: action.data });
+  return newState;
+};
+
 export default function reducer(state = DEFAULT_STATE, action) {
   console.log('IS IN REDUCER ');
   switch (action.type) {
@@ -379,6 +388,9 @@ export default function reducer(state = DEFAULT_STATE, action) {
 
     case EmployeeType.UPDATE_EMPLOYEE_DATA:
       return updateData(state, action);
+
+    case EmployeeType.SET_NEW_EMPLOYEE:
+      return setNewEmployee(state, action);
 
     default:
       return state;
