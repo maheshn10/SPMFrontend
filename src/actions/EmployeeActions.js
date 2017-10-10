@@ -38,3 +38,7 @@ export function modifyCertificateEndDate(date) {
 export function updateEmployeeData(data) {
   return { type: EmployeeType.UPDATE_EMPLOYEE_DATA, data };
 }
+
+export function setNewEmployee(data) {
+  return { type: EmployeeType.SET_NEW_EMPLOYEE, data };
+}

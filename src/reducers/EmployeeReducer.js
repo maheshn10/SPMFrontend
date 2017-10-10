@@ -1,253 +1,262 @@
-
 import { EmployeeType } from '../actions/ActionType';
 
-const DEFAULT_STATE = {
-  currentEmployee: [
-    { identify: {
-      hireDate: new Date(),
-      company: '',
-      eventReason: ''
+const employeeObj = {
+  entityInformation: {
+    owner: 'abcd',
+    approver: 'efgh',
+    status: 'new',
+    customer: 'McBitss',
+    approval_date: new Date()
+  },
+  identify: {
+    hireDate: new Date(),
+    company: '',
+    eventReason: ''
+  },
+  personalInformation: {
+    biographicalInformation: {
+      DOB: new Date(),
+      CountryOfBirth: '',
+      DateOfDeath: new Date()
     },
+    personalInformation: {
       personalInformation: {
-        biographicalInformation: {
-          DOB: new Date(),
-          CountryOfBirth: '',
-          DateOfDeath: new Date()
-        },
-        personalInformation: {
-          personalInformation: {
-            DOB: new Date(),
-            CountryOfBirth: '',
-            DateOfDeath: new Date(),
-            firstName: '',
-            middleName: '',
-            lastName: '',
-            suffix: '',
-            displayName: '',
-            formalName: '',
-            title: '',
-            birthName: '',
-            initials: '',
-            prefix: '',
-            gender: '',
-            maritalStatus: '',
-            maritalStatusSinceDate: new Date(),
-            secondNationality: '',
-            thirdNationality: '',
-            preferredLanguage: '',
-            challengeStatus: ''
-          },
-          countrySpecificFields: {
-            us: {
-              ethnicGroup: '',
-              veteran: '',
-              challengedVeteran: ''
-            }
-          }
-
-        },
-        nationalIdInformation: {
-          country1: {
-            country: '',
-            nationalIdCardType: '',
-            nationalId: '',
-            isPrimary: 'no'
-          },
-          country2: {
-            country: '',
-            nationalIdCardType: '',
-            nationalId: '',
-            isPrimary: 'no'
-          }
-        },
-        addressInformation: {
-          homeAddress: {
-            addressType: '',
-            country: '',
-            line1: '',
-            line2: '',
-            city: '',
-            state: '',
-            zip: ''
-          },
-          mailingAddress: {
-            addressType: '',
-            country: '',
-            line1: '',
-            line2: '',
-            city: '',
-            state: '',
-            zip: ''
-          }
-        },
-        workPermitInformation: {
-          permit1: {
-            country: '',
-            documentType: '',
-            documentTitle: '',
-            documentNumber: '',
-            issueDate: '',
-            issuePlace: '',
-            issuingAuthority: '',
-            expirationDate: '',
-            validated: '',
-            attachments: ''
-          }
-        },
-        contactInformation: {
-          emailInformation: {
-            emailType: '',
-            emailAddress: '',
-            isPrimary: ''
-          },
-          phoneInformation: {
-            phoneType: '',
-            number: '',
-            extension: '',
-            isPrimary: ''
-          }
-        }
-
+        DOB: new Date(),
+        CountryOfBirth: 'us',
+        DateOfDeath: new Date(),
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        suffix: '',
+        displayName: '',
+        formalName: '',
+        title: '',
+        birthName: '',
+        initials: '',
+        prefix: '',
+        gender: 'm',
+        maritalStatus: '',
+        maritalStatusSinceDate: new Date(),
+        secondNationality: '',
+        thirdNationality: '',
+        preferredLanguage: '',
+        challengeStatus: ''
       },
-      jobInformation: {
-        employmentDetail: {
-          keyJobAttribute: {
-            jobCode: '',
-            position: ''
-          },
-          organizationalInformation: {
-            company: '',
-            businessUnit: '',
-            division: '',
-            department: '',
-            location: '',
-            timeZone: '',
-            costCenter: ''
-          },
-          jobInformation: {
-            employmentStatus: '',
-            supervisor: '',
-            jobClassification: '',
-            jobTitle: '',
-            localJobTitle: '',
-            payGrade: '',
-            regularOrTemporary: '',
-            standardWeeklyHours: '',
-            fte: ''
-          },
-          timeInformation: {
-            holidayCalendar: '',
-            workSchedule: '',
-            timeProfile: ''
-          },
-          countrySpecificFields: {
-            us: {
-              isFullTime: '',
-              notes: '',
-              employeeClass: '',
-              flsaStatus: '',
-              isShiftEmployee: '',
-              shiftCode: '',
-              shiftRate: '',
-              shiftPercent: '',
-              isCrossBorderWorker: '',
-              eeoJobGroup: '',
-              contractType: '',
-              continuedSicknessPayPeriod: '',
-              continuedSicknessPayMeasure: '',
-              noticePeriod: '',
-              initialEntry: '',
-              entryIntoGroup: '',
-              corporation: '',
-              eeoCategory1: '',
-              eeoCategory2: '',
-              eeoCategory3: '',
-              eeoCategory4: '',
-              eeoCategory5: '',
-              eeoCategory6: ''
-            }
-          }
-        },
-        jobRelationships: {
-          globalFields: {
-            relationshipType: '',
-            name: ''
-          }
-        },
-        employmentDetails: {
-          globalFields: {
-            hireDate: '',
-            originalStartDate: '',
-            seniorityStartDate: '',
-            serviceDate: '',
-            professionalServiceDate: '',
-            retireDate: ''
-          }
-        }
-      },
-      compensationInformation: {
-        compensationInformation: {
-          compensationGroup: {
-            payType: '',
-            payGroup: '',
-            isEligibleForBenefit: '',
-            isEligibleForCar: '',
-            benefitRate: '',
-            compaRatio: '',
-            rangePenetration: '',
-            annualizedSalary: '',
-            teo: ''
-          },
-          compensation: {
-            payComponent: '',
-            amount: '',
-            currency: '',
-            frequency: ''
-          }
-        },
-        oneTimePayment: {
-          oneTimePayment: {
-            payComponent: '',
-            amount: '',
-            currency: '',
-            paymentDate: ''
-          }
-        },
-        recurringPayment: {
-          recurringPayment: {
-            payComponent: '',
-            amount: '',
-            currency: '',
-            startDate: '',
-            endDate: ''
-          }
+      countrySpecificFields: {
+        us: {
+          ethnicGroup: '',
+          veteran: '',
+          challengedVeteran: ''
         }
       }
+
+    },
+    nationalIdInformation: {
+      country1: {
+        country: '',
+        nationalIdCardType: '',
+        nationalId: '',
+        isPrimary: 'no'
+      },
+      country2: {
+        country: '',
+        nationalIdCardType: '',
+        nationalId: '',
+        isPrimary: 'no'
+      }
+    },
+    addressInformation: {
+      homeAddress: {
+        addressType: '',
+        country: '',
+        line1: '',
+        line2: '',
+        city: '',
+        state: '',
+        zip: ''
+      },
+      mailingAddress: {
+        addressType: '',
+        country: '',
+        line1: '',
+        line2: '',
+        city: '',
+        state: '',
+        zip: ''
+      }
+    },
+    workPermitInformation: {
+      permit1: {
+        country: '',
+        documentType: '',
+        documentTitle: '',
+        documentNumber: '',
+        issueDate: '',
+        issuePlace: '',
+        issuingAuthority: '',
+        expirationDate: '',
+        validated: '',
+        attachments: ''
+      }
+    },
+    contactInformation: {
+      emailInformation: {
+        emailType: '',
+        emailAddress: '',
+        isPrimary: ''
+      },
+      phoneInformation: {
+        phoneType: '',
+        number: '',
+        extension: '',
+        isPrimary: ''
+      }
     }
-  ]
+
+  },
+  jobInformation: {
+    employmentDetail: {
+      keyJobAttribute: {
+        jobCode: '',
+        position: ''
+      },
+      organizationalInformation: {
+        company: '',
+        businessUnit: '',
+        division: '',
+        department: '',
+        location: '',
+        timeZone: '',
+        costCenter: ''
+      },
+      jobInformation: {
+        employmentStatus: '',
+        supervisor: '',
+        jobClassification: '',
+        jobTitle: '',
+        localJobTitle: '',
+        payGrade: '',
+        regularOrTemporary: '',
+        standardWeeklyHours: '',
+        fte: ''
+      },
+      timeInformation: {
+        holidayCalendar: '',
+        workSchedule: '',
+        timeProfile: ''
+      },
+      countrySpecificFields: {
+        us: {
+          isFullTime: '',
+          notes: '',
+          employeeClass: '',
+          flsaStatus: '',
+          isShiftEmployee: '',
+          shiftCode: '',
+          shiftRate: '',
+          shiftPercent: '',
+          isCrossBorderWorker: '',
+          eeoJobGroup: '',
+          contractType: '',
+          continuedSicknessPayPeriod: '',
+          continuedSicknessPayMeasure: '',
+          noticePeriod: '',
+          initialEntry: '',
+          entryIntoGroup: '',
+          corporation: '',
+          eeoCategory1: '',
+          eeoCategory2: '',
+          eeoCategory3: '',
+          eeoCategory4: '',
+          eeoCategory5: '',
+          eeoCategory6: ''
+        }
+      }
+    },
+    jobRelationships: {
+      globalFields: {
+        relationshipType: '',
+        name: ''
+      }
+    },
+    employmentDetails: {
+      globalFields: {
+        hireDate: '',
+        originalStartDate: '',
+        seniorityStartDate: '',
+        serviceDate: '',
+        professionalServiceDate: '',
+        retireDate: ''
+      }
+    }
+  },
+  compensationInformation: {
+    compensationInformation: {
+      compensationGroup: {
+        payType: '',
+        payGroup: '',
+        isEligibleForBenefit: '',
+        isEligibleForCar: '',
+        benefitRate: '',
+        compaRatio: '',
+        rangePenetration: '',
+        annualizedSalary: '',
+        teo: ''
+      },
+      compensation: {
+        payComponent: '',
+        amount: '',
+        currency: '',
+        frequency: ''
+      }
+    },
+    oneTimePayment: {
+      oneTimePayment: {
+        payComponent: '',
+        amount: '',
+        currency: '',
+        paymentDate: ''
+      }
+    },
+    recurringPayment: {
+      recurringPayment: {
+        payComponent: '',
+        amount: '',
+        currency: '',
+        startDate: '',
+        endDate: ''
+      }
+    }
+  }
+};
+
+const DEFAULT_STATE = {
+  newEmployee: Object.assign({}, employeeObj),
+  myEmployees: [],
+  currentEmployee: Object.assign({}, employeeObj)
 };
 
 const modifyHireDate = (state, action) => {
-  const newCurrentEmployeeState = [];
-  Object.assign(newCurrentEmployeeState, state.currentEmployee);
-  newCurrentEmployeeState[0].identify.hireDate = action.date;
+  const newCurrentEmployeeState = {};
+  Object.assign(newCurrentEmployeeState, state.newEmployee);
+  newCurrentEmployeeState.identify.hireDate = action.date;
   const newState = {};
-  Object.assign(newState, state, { currentEmployee: newCurrentEmployeeState });
+  Object.assign(newState, state, { newEmployee: newCurrentEmployeeState });
   return newState;
 };
 
 const getCurrentEmployee = (state) => {
   console.log('CURRENTSTATE');
-  const newCurrentEmployeeState = [];
-  Object.assign(newCurrentEmployeeState, state.currentEmployee);
-  newCurrentEmployeeState[0].identify.hireDate = new Date();
-  newCurrentEmployeeState[0].identify.company = '';
-  newCurrentEmployeeState[0].identify.eventReason = '';
-  newCurrentEmployeeState[0].personalInformation.biographicalInformation.DOB = new Date();
-  newCurrentEmployeeState[0].personalInformation.biographicalInformation.CountryOfBirth = '';
-  newCurrentEmployeeState[0].personalInformation.biographicalInformation.DateOfDeath = new Date();
+  const newCurrentEmployeeState = {};
+  Object.assign(newCurrentEmployeeState, state.newEmployee);
+  newCurrentEmployeeState.identify.hireDate = new Date();
+  newCurrentEmployeeState.identify.company = '';
+  newCurrentEmployeeState.identify.eventReason = '';
+  newCurrentEmployeeState.personalInformation.biographicalInformation.DOB = new Date();
+  newCurrentEmployeeState.personalInformation.biographicalInformation.CountryOfBirth = '';
+  newCurrentEmployeeState.personalInformation.biographicalInformation.DateOfDeath = new Date();
   const newState = {};
-  Object.assign(newState, state, { currentEmployee: newCurrentEmployeeState });
+  Object.assign(newState, state, { newEmployee: newCurrentEmployeeState });
   return newState;
 };
 
@@ -270,11 +279,11 @@ const setEventReasonData = (state, action) => {
 };
 
 const modifyDOB = (state, action) => {
-  const newCurrentEmployeeState = [];
-  Object.assign(newCurrentEmployeeState, state.currentEmployee);
-  newCurrentEmployeeState[0].personalInformation.biographicalInformation.DOB = action.date;
+  const newCurrentEmployeeState = {};
+  Object.assign(newCurrentEmployeeState, state.newEmployee);
+  newCurrentEmployeeState.personalInformation.biographicalInformation.DOB = action.date;
   const newState = {};
-  Object.assign(newState, state, { currentEmployee: newCurrentEmployeeState });
+  Object.assign(newState, state, { newEmployee: newCurrentEmployeeState });
   return newState;
 };
 
@@ -318,8 +327,8 @@ const updateData = (state, action) => {
   console.log('updating employee data');
   console.log(action);
 
-  const newCurrentEmployeeState = [];
-  Object.assign(newCurrentEmployeeState, state.currentEmployee);
+  const newCurrentEmployeeState = {};
+  Object.assign(newCurrentEmployeeState, state.newEmployee);
   const fieldArr = action.data.field.split('.');
   const step = fieldArr[0];
   const section = fieldArr[1];
@@ -328,13 +337,22 @@ const updateData = (state, action) => {
   if (subSection === 'countrySpecificFields') {
     const country = field;
     const countryField = fieldArr[4];
-    newCurrentEmployeeState[0][step][section][subSection][country][countryField] = action.data.value;
+    newCurrentEmployeeState[step][section][subSection][country][countryField] = action.data.value;
   } else {
-    newCurrentEmployeeState[0][step][section][subSection][field] = action.data.value;
+    newCurrentEmployeeState[step][section][subSection][field] = action.data.value;
   }
 
   const newState = {};
-  Object.assign(newState, state, { currentEmployee: newCurrentEmployeeState });
+  Object.assign(newState, state, { newEmployee: newCurrentEmployeeState });
+  return newState;
+};
+
+const setNewEmployee = (state, action) => {
+  //const newCurrentEmployeeState = action.payload;
+  //Object.assign(newCurrentEmployeeState, state.newEmployee);
+  //newCurrentEmployeeState[0].company = action.id;
+  const newState = {};
+  Object.assign(newState, state, { newEmployee: action.data });
   return newState;
 };
 
@@ -370,6 +388,9 @@ export default function reducer(state = DEFAULT_STATE, action) {
 
     case EmployeeType.UPDATE_EMPLOYEE_DATA:
       return updateData(state, action);
+
+    case EmployeeType.SET_NEW_EMPLOYEE:
+      return setNewEmployee(state, action);
 
     default:
       return state;

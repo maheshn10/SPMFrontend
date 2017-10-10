@@ -2,6 +2,11 @@ export const DashboardType = {
   TEST: 'TEST'
 };
 
+export const ChatBotType = {
+  INCHAT: 'INCHAT',
+  OUTCHAT: 'OUTCHAT'
+};
+
 export const LoginType = {
   AUTHENTICATE: 'AUTHENTICATE'
 };
@@ -12,6 +17,7 @@ export const ErrorType = {
 
 export const EmployeeType = {
   UPDATE_EMPLOYEE_DATA: 'UPDATE_EMPLOYEE_DATA',
+  SET_NEW_EMPLOYEE: 'SET_NEW_EMPLOYEE',
   MODIFY_HIRE_DATE: 'MODIFY_HIRE_DATE',
   GET_CURRENT_EMPLOYEE: 'GET_CURRENT_EMPLOYEE',
   UPDATE_COMPANY_DATA: 'UPDATE_COMPANY_DATA',

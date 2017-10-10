@@ -5,5 +5,12 @@ export const Configs = {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache'
     }
+  },
+  CHATBOTCONFIG: {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache'
+    },
+    dataType: 'jsonp'
   }
 };
