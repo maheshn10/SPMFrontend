@@ -467,20 +467,22 @@ a {
 }
 .outChatBubble {
 	background: #ffffff;
-	padding: 10px;
+	padding: 5px 10px;
 	border-bottom: 1px solid #F39638;
 	border-right: 1px solid #F39638;
 	margin-bottom: 15px;
 	color: #175d9d;
 	float: right;
+	font-size: 12px;
 }
 .inChatBubble {
 	background: #E6EEF6;
-	padding: 10px;
+	padding: 5px 10px;
 	border-bottom: 1px solid #8FB1D0;
 	border-left: 1px solid #8FB1D0;
 	margin-bottom: 0;
 	color: #175d9d;
+	font-size: 12px;
 }
 .spacer {
 	clear: both;
