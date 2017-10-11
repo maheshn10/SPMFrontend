@@ -6,7 +6,7 @@ import { server } from './config';
 
 const request = require('superagent');
 
-export const updateNewEmployee = (employeeData, shouldUpdateState, dispatch) => {
+export const updateNewEmployee = (employeeData, shouldUpdateState, dispatch, setSyncedWithServer) => {
   const url = 'http://0.0.0.0:9000/employees/updateNewEmployee';
   request.post(url)
   .send(employeeData)
@@ -17,6 +17,7 @@ export const updateNewEmployee = (employeeData, shouldUpdateState, dispatch) => 
         console.log('Oh no! error');
       } else {
         console.log(JSON.stringify(res.body));
+        setSyncedWithServer(true);
         if (shouldUpdateState) {
           console.log('updating state');
           dispatch(setNewEmployee(res.body));

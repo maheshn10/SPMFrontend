@@ -9,21 +9,27 @@ const employeeObj = {
     approval_date: new Date()
   },
   identify: {
-    hireDate: new Date(),
-    company: '',
-    eventReason: ''
+    identify: {
+      identify: {
+        hireDate: new Date(),
+        company: '',
+        eventReason: ''
+      }
+    }
   },
   personalInformation: {
     biographicalInformation: {
-      DOB: new Date(),
-      CountryOfBirth: '',
-      DateOfDeath: new Date()
+      biographicalInformation: {
+        dob: '',
+        countryOfBirth: 'us',
+        regionOfBirth: '',
+        dateOfDeath: '',
+        employeeId: '',
+        employeeGlobalId: ''
+      }
     },
     personalInformation: {
       personalInformation: {
-        DOB: new Date(),
-        CountryOfBirth: 'us',
-        DateOfDeath: new Date(),
         firstName: '',
         middleName: '',
         lastName: '',

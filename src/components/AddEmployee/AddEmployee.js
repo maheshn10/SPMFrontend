@@ -13,18 +13,19 @@ import 'react-day-picker/lib/style.css';
 import './AddEmployee.scss';
 import './AddEmployeeExtra.scss';
 import {
-    modifyHireDate,
+    //modifyHireDate,
     getCurrentEmployee,
     updateCompany,
     updateEventReason,
-    modifyDOB,
-    updateCountryOfBirth,
-    modifyDateOfDeath,
-    modifyCertificateStartDate,
-    modifyCertificateEndDate,
+    //modifyDOB,
+    //updateCountryOfBirth,
+    //modifyDateOfDeath,
+    //modifyCertificateStartDate,
+    //modifyCertificateEndDate,
     updateEmployeeData } from '../../actions/EmployeeActions';
 
 import { updateNewEmployee, findNewEmployee } from '../../services/Employee.service';
+import DatePickerCustom from './DatePickerCustom';
 
 class AddEmployee extends React.Component {
   static get contextTypes() {
@@ -39,6 +40,7 @@ class AddEmployee extends React.Component {
     this.nextStep = this.nextStep.bind(this);
     this.prevStep = this.prevStep.bind(this);
     this.state = {
+      syncedWithServer: true,
       breadcrumbPosition: 1,
       modifyHireDateErrorText: '',
       modifyCompanyErrorText: '',
@@ -88,7 +90,7 @@ class AddEmployee extends React.Component {
     }
   }
 
-  setCountryOfBirth = (value) => {
+  /*setCountryOfBirth = (value) => {
     console.log(value, 'value');
     if (typeof value !== 'undefined') {
       this.props.dispatch(
@@ -98,9 +100,8 @@ class AddEmployee extends React.Component {
       );
       this.setState({ modifyCountryOfBirthText: '' });
     }
-  }
-
-  modifyDOB = (date) => {
+  }*/
+  /*modifyDOB = (date) => {
     this.props.dispatch(
         modifyDOB(
             date
@@ -114,12 +115,16 @@ class AddEmployee extends React.Component {
             date
         )
     );
+  }*/
+  setSyncedWithServer = (value) => {
+    console.log(value, 'setSyncedWithServer');
+    this.state.syncedWithServer = value;
   }
   toggleElement(elementID) {
     const x = document.getElementById(elementID);
     x.classList.toggle('active');
   }
-  modifyDateOfDeath = (date) => {
+  /*modifyDateOfDeath = (date) => {
     this.props.dispatch(
         modifyDateOfDeath(
             date
@@ -139,8 +144,9 @@ class AddEmployee extends React.Component {
             date
         )
     );
-  }
+  }*/
   updateEmployeeData = (data) => {
+    this.setSyncedWithServer(false);
     this.props.dispatch(
         updateEmployeeData(
             { value: data.target.value, field: data.target.name }
@@ -148,9 +154,11 @@ class AddEmployee extends React.Component {
     );
   }
   save() {
-    console.log('saving the employee data');
-    console.log({ employee: this.props.newEmployee });
-    updateNewEmployee({ employee: this.props.newEmployee }, false, this.props.dispatch);
+    if (!this.state.syncedWithServer) {
+      console.log('saving the employee data');
+      console.log({ employee: this.props.newEmployee });
+      updateNewEmployee({ employee: this.props.newEmployee }, false, this.props.dispatch, this.setSyncedWithServer);
+    }
   }
   nextStep() {
     switch (this.state.breadcrumbPosition) {
@@ -332,27 +340,27 @@ class AddEmployee extends React.Component {
   render() {
     console.log('rendering');
     console.log(this.props.newEmployee);
-    /* const hireDateDay = (this.props.newEmployee.identify.hireDate)
-     ? this.props.newEmployee.identify.hireDate
-     : new Date(); */
-    const hireDateDay = new Date();
-    const formattedDay = (hireDateDay)
+    /*const hireDateDay = (this.props.newEmployee.identify.identify.identify.hireDate)
+     ? this.props.newEmployee.identify.identify.identify.hireDate
+     : new Date();*/
+    const hireDateDay = (this.props.newEmployee.identify.identify.identify.hireDate);
+    const formattedHireDateDay = (hireDateDay)
         ? moment(hireDateDay).format('DD-MMM-YYYY')
         : '';
     /* const DOBDay = (this.props.newEmployee.personalInformation.biographicalInformation.DOB)
      ? this.props.newEmployee.personalInformation.biographicalInformation.DOB
      : new Date(); */
-    const DOBDay = (this.props.newEmployee.personalInformation.biographicalInformation.DOB);
+    /*const DOBDay = (this.props.newEmployee.personalInformation.biographicalInformation.dob);
     const formattedDOB = (DOBDay)
         ? moment(DOBDay).format('DD-MMM-YYYY')
-        : '';
+        : '';*/
     /* const DateOfDeathDay = (this.props.newEmployee.personalInformation.biographicalInformation.DateOfDeath)
      ? this.props.newEmployee.personalInformation.biographicalInformation.DateOfDeath
      : new Date(); */
-    const DateOfDeathDay = new Date();
+    /*const DateOfDeathDay = (this.props.newEmployee.personalInformation.biographicalInformation.dateOfDeath);
     const formattedDateOfDeath = (DateOfDeathDay)
         ? moment(DateOfDeathDay).format('DD-MMM-YYYY')
-        : '';
+        : '';*/
     /* const CertificateStartDateDay = (this.props.newEmployee.personalInformation.biographicalInformation.CertificateStartDate)
      ? this.props.newEmployee.personalInformation.biographicalInformation.CertificateStartDate
      : new Date(); */
@@ -461,7 +469,7 @@ class AddEmployee extends React.Component {
                           data-direction="finish"
                           onClick={() => this.save()}
                         >
-                          Save
+                          Submit
                         </button>
                       </div>
                     </div>
@@ -474,7 +482,12 @@ class AddEmployee extends React.Component {
                           <DayPickerInput
                             placeholder="MM/DD/YYYY"
                             onDayChange={this.modifyHireDate}
-                            value={formattedDay}
+                            value={formattedHireDateDay}
+                          />
+                          <DatePickerCustom
+                            targetName="identify.identify.identify.hireDate"
+                            onDayChange={this.updateEmployeeData}
+                            value={formattedHireDateDay}
                           />
                           <p className="danger">
                             {this.state.modifyHireDateErrorText !== '' ? this.state.modifyHireDateErrorText : ''}
@@ -639,11 +652,16 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <DayPickerInput
+                                          {/*<DayPickerInput
                                             className="js-datepicker entry-input"
                                             placeholder="MM/DD/YYYY"
                                             onDayChange={this.modifyDOB}
                                             value={formattedDOB}
+                                          />*/}
+                                          <DatePickerCustom
+                                            targetName="personalInformation.biographicalInformation.biographicalInformation.dob"
+                                            onDayChange={this.updateEmployeeData}
+                                            value={this.props.newEmployee.personalInformation.biographicalInformation.biographicalInformation.dob}
                                           />
                                           <p className="danger">
                                             {this.state.modifyDOBErrorText !== '' ? this.state.modifyDOBErrorText : ''}
@@ -657,7 +675,7 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <ReactSuperSelect
+                                          {/*<ReactSuperSelect
                                             className="custom-select"
                                             placeholder="Select Country of Birth"
                                             // dataSource={this.props.newEmployee.personalInformation.biographicalInformation.countryList}
@@ -665,7 +683,11 @@ class AddEmployee extends React.Component {
                                             optionLabelKey="CountryOfBirthName"
                                             clearable={false}
                                             onChange={this.setCountryOfBirth}
-                                          />
+                                          />*/}
+                                          <select className="custom-select" name="personalInformation.biographicalInformation.biographicalInformation.countryList" value={this.props.newEmployee.personalInformation.biographicalInformation.biographicalInformation.countryList} onChange={this.updateEmployeeData} onBlur={() => this.save()} >
+                                            <option value="v-1">Drop-down</option>
+                                            <option value="v-2">Drop-down2</option>
+                                          </select>
                                           <p className="danger">
                                             {this.state.modifyCountryOfBirthText !== '' ? this.state.modifyCountryOfBirthErrorText : ''}
                                           </p>
@@ -678,7 +700,7 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <p className="textBoxStyle entry-input">{ /* this.props.newEmployee.personalInformation.biographicalInformation.regionOfBirth */ }</p>
+                                          <input name="personalInformation.biographicalInformation.biographicalInformation.regionOfBirth" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.biographicalInformation.biographicalInformation.regionOfBirth} onChange={this.updateEmployeeData} onBlur={() => this.save()} />
                                         </td>
                                       </tr>
                                       <tr>
@@ -688,11 +710,16 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <DayPickerInput
+                                          {/*<DayPickerInput
                                             className="js-datepicker entry-input"
                                             placeholder="MM/DD/YYYY"
                                             onDayChange={this.modifyDateOfDeath}
                                             value={formattedDateOfDeath}
+                                          />*/}
+                                          <DatePickerCustom
+                                            targetName="personalInformation.biographicalInformation.biographicalInformation.dateOfDeath"
+                                            onDayChange={this.updateEmployeeData}
+                                            value={this.props.newEmployee.personalInformation.biographicalInformation.biographicalInformation.dateOfDeath}
                                           />
                                           <p className="danger">
                                             {this.state.modifyDateOfDeathErrorText !== '' ? this.state.modifyDateOfDeathErrorText : ''}
@@ -706,7 +733,7 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <p className="textBoxStyle entry-input">{ /* this.props.newEmployee.personalInformation.biographicalInformation.employeeId */ }</p>
+                                          <input name="personalInformation.biographicalInformation.biographicalInformation.employeeId" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.biographicalInformation.biographicalInformation.employeeId} onChange={this.updateEmployeeData} onBlur={() => this.save()} />
                                         </td>
                                       </tr>
                                       <tr>
@@ -716,7 +743,7 @@ class AddEmployee extends React.Component {
                                           </span>
                                         </td>
                                         <td>
-                                          <p className="textBoxStyle entry-input">{ /* this.props.newEmployee.personalInformation.biographicalInformation.employeeGlobalId */ }</p>
+                                          <input name="personalInformation.biographicalInformation.biographicalInformation.employeeGlobalId" className="textBoxStyle entry-input" value={this.props.newEmployee.personalInformation.biographicalInformation.biographicalInformation.employeeGlobalId} onChange={this.updateEmployeeData} onBlur={() => this.save()} />
                                         </td>
                                       </tr>
                                     </tbody>
@@ -920,8 +947,8 @@ class AddEmployee extends React.Component {
                                     </td>
                                     <td>
                                       <select className="custom-select" name="personalInformation.personalInformation.personalInformation.maritalStatus" value={this.props.newEmployee.personalInformation.personalInformation.personalInformation.maritalStatus} onChange={this.updateEmployeeData}>
-                                        <option value="v-1">Drop-down</option>
-                                        <option value="v-2">Drop-down2</option>
+                                        <option value="1">Drop-down</option>
+                                        <option value="2">Drop-down2</option>
                                       </select>
                                     </td>
                                   </tr>
@@ -932,9 +959,14 @@ class AddEmployee extends React.Component {
                                       </span>
                                     </td>
                                     <td>
-                                      <DayPickerInput
+                                      {/*<DayPickerInput
                                         className="js-datepicker entry-input"
                                         placeholder="MM/DD/YYYY"
+                                        onDayChange={this.updateEmployeeData}
+                                        value={formattedMaritalStatusSinceDate}
+                                      />*/}
+                                      <DatePickerCustom
+                                        targetName="personalInformation.personalInformation.personalInformation.maritalStatusSinceDate"
                                         onDayChange={this.updateEmployeeData}
                                         value={formattedMaritalStatusSinceDate}
                                       />
